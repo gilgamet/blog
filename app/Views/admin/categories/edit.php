@@ -1,4 +1,8 @@
 <?php
+require_once ROOT . "\App\App.php";
+require_once ROOT . "\core\HTML\BootstrapForm.php";
+
+
 $table = App::getInstance()->getTable('Category');
 if(!empty($_POST)){
     $result = $table->update($_GET['id'],[

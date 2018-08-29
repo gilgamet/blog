@@ -1,4 +1,10 @@
 <?php
+
+require_once ROOT . "\App\App.php";
+require_once ROOT . "\core\HTML\BootstrapForm.php";
+require_once ROOT . "\core\Database\MySqlDatabase.php";
+
+
 $postTable = App::getInstance()->getTable('Post');
 if(!empty($_POST)){
     $result = $postTable->update($_GET['id'],[

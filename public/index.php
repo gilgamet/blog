@@ -3,6 +3,7 @@
 define('ROOT', dirname(__DIR__));
    require ROOT . "\app\App.php";
    require ROOT . "\app\Controller\PostsController.php";
+   
    App::load();
    
 

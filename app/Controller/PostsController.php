@@ -1,6 +1,8 @@
 <?php
 
-require_once ROOT . "\app\Controller\AppController";
+require_once ROOT . "\app\Controller\AppController.php";
+require_once ROOT . "\core\Controller\Controller.php";
+require_once ROOT . "\app\Table\PostTable.php";
 
 class PostsController extends AppController{
 
@@ -14,9 +16,12 @@ class PostsController extends AppController{
      *
      */
     public function index(){
-        $posts = $this->Post->last();
+        var_dump($this->Posts);
+        $posts = $this->Posts->last();
+        var_dump($posts);
+        die();
         $categories = $this->Category->all();
-        $this->render('posts.index', compact('posts','categories'));
+        $this->render('posts.index', compact('posts', 'categories'));
     }
 
     public function category(){

@@ -1,5 +1,7 @@
 <?php
 
+require_once ROOT . '\core\Database\Database.php';
+
 class MySqlDatabase extends Database {
 
     private $db_name;

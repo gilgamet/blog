@@ -5,7 +5,7 @@
 <?php 
 
 
-        foreach($posts as $post): ?>
+        foreach($Posts as $post): ?>
 
   
                 <h2><a href="<?= $post->url; ?>"><?= $post->titre; ?></a></h2>

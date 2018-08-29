@@ -1,4 +1,8 @@
 <?php
+require_once ROOT . "\core\HTML\BootstrapForm.php";
+require_once ROOT . "\core\Auth\DbAuth.php";
+require_once ROOT . "\App\App.php";
+
 
 class UsersController extends AppController{
 

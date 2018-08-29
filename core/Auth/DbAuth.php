@@ -10,7 +10,7 @@ class DbAuth{
     }
 
     /**
-     * Undocumented function
+     * Permet l'authentification a l'administreation du site
      *
      * @param [type] $username
      * @param [type] $password

@@ -1,11 +1,13 @@
 <?php
+require_once ROOT .'\core\Controller\Controller.php';
+require_once ROOT .'\app\App.php';
 
 class AppController extends Controller{
 
     protected $template = 'default';
 
     public function __construct(){
-        $this->viewPath = ROOT . '\\app\\Views\\';
+        $this->viewPath = ROOT . '/app/Views/';
     }
 
     protected function loadModel($model_name){

@@ -1,5 +1,10 @@
 <?php
 
+require_once ROOT . '\app\Table\PostTable.php';
+require_once ROOT . '\app\Table\CategoryTable.php';
+require_once ROOT . '\core\Config.php';
+require_once ROOT . '\core\Database\MySqlDatabase.php';
+
     class App {
     
         public $title = "Mon super site";
@@ -33,9 +38,8 @@
          */
 
         public function getTable($name) {
-            $class_name ='\\App\\Table\\' . ucfirst($name) . 'Table';
+            $class_name = ucfirst($name) . 'Table';
             return new $class_name($this->getDb());
-            
         }
     
         /**
