@@ -1,5 +1,7 @@
 <?php
 
+require_once ROOT .'\app\Controller\PostsController.php';
+
 class Controller{
 
     protected $viewPath;
@@ -8,10 +10,9 @@ class Controller{
     protected function render($view, $variables = []){
         ob_start();
         extract($variables);
-        require($this->viewPath . str_replace('.', '/', $view) . '.php');
+        require($this->viewPath . str_replace('.', '\\', $view) . '.php');
         $content = ob_get_clean();
-        require($this->viewPath . 'template/' . $this->template . '.php');
-        var_dump($this->viewpath);
+        require($this->viewPath . 'template\\' . $this->template . '.php');
     }
 
     protected function forbidden(){

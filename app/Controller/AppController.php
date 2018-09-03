@@ -1,13 +1,18 @@
 <?php
+
+namespace App\Controller\Admin;
+use App\Controller\AppController;
+
 require_once ROOT .'\core\Controller\Controller.php';
 require_once ROOT .'\app\App.php';
+require_once ROOT .'\app\Controller\PostsController.php';
 
-class AppController extends Controller{
+class AppController extends AppController{
 
     protected $template = 'default';
 
     public function __construct(){
-        $this->viewPath = ROOT . '/app/Views/';
+        $this->viewPath = ROOT . '\\app\\Views\\';
     }
 
     protected function loadModel($model_name){

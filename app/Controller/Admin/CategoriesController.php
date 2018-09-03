@@ -57,7 +57,7 @@ class CategoriesController extends AppController {
     }
 
     /**
-     * Se charge de supprimer la categorie ciblée
+     * supprime la categorie ciblée avec l'Id
      */
     public function delete() {
         if (!empty($_POST)) {

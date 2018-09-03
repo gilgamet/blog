@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Controller\Admin;
+require_once ROOT . "\app\App.php";
 
 
-class PostsController extends AppController{
+class PostsController extends app\Controller\Admin\AppController{
 
     public function __construct(){
         parent::__construct();

@@ -18,7 +18,7 @@ if (isset($_GET['p'])){
 ob_start();
 
 if($page === 'home'){
-  require ROOT . '\pages\admin\posts\index.php';
+  require ROOT . '\Views\admin\posts\index.php';
 }else if ($page === 'posts.edit'){
   require ROOT . '\pages\admin\posts\edit.php';
 }else if ($page === 'posts.delete'){
@@ -36,5 +36,5 @@ if($page === 'home'){
 }
 
 $content = ob_get_clean();
-require ROOT . '..\pages\template\default.php';
+require ROOT . '\app\Views\template\default.php';
     

@@ -40,7 +40,7 @@ class Table {
     }
 
     /**
-     * Parcour les éléménts du tableau pour les passer à la réquête update
+     * Parcours les éléménts du tableau pour les passer à la réquête update
      * @param $int $id Id de l'element à rechercher
      * @param $array $fields Tableau contenant les éléménts à modifier
      */

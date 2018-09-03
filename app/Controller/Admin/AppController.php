@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
-
-class AppController extends App\Controller\AppController{
+class AppController extends app\Controller\AppController{
     
     public function __construct(){
         parent::__construct();

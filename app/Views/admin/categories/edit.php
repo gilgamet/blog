@@ -1,7 +1,9 @@
 <?php
 require_once ROOT . "\App\App.php";
 require_once ROOT . "\core\HTML\BootstrapForm.php";
-
+require_once ROOT . '\core\Database\MySqlDatabase.php';
+require_once ROOT . "app\Table\Article.php";
+require_once ROOT . '\core\Table\Table.php';
 
 $table = App::getInstance()->getTable('Category');
 if(!empty($_POST)){
