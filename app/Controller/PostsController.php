@@ -5,6 +5,9 @@ require_once ROOT . "\core\Controller\Controller.php";
 require_once ROOT . "\app\Table\PostTable.php";
 require_once ROOT . "\app\App.php";
 require_once ROOT . "\core\Table\Table.php";
+require_once ROOT . '\app\Entity\PostEntity.php';
+require_once ROOT . '\app\Entity\CategoryEntity.php';
+
 
 
 class PostsController extends AppController{

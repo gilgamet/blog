@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Controller\Admin;
-use App\Controller\AppController;
-
 require_once ROOT .'\core\Controller\Controller.php';
 require_once ROOT .'\app\App.php';
 require_once ROOT .'\app\Controller\PostsController.php';
 
-class AppController extends AppController{
+class AppController extends Controller{
 
     protected $template = 'default';
 

@@ -18,7 +18,7 @@ class DbAuth{
      */
     public function login($username, $password){
         $user = $this->db->prepare("SELECT * From users WHERE username = ?", [$username], null, true);
-        if($user){
+        if($user){   
             $verify = password_verify($password, '$2y$10$ZpupoKpUdxLVYRhK3NsijOvxsitCiy5gAQ5/H1yh/aB2FkXWRDjZO');
             if($user->password == $verify ){
                 $_SESSION['auth'] = $user->id;

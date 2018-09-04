@@ -12,7 +12,7 @@ class PostsController extends app\Controller\Admin\AppController{
     }
 
     public function index(){
-        $posts = $this->Post->all();
+        $posts = App::getInstance()->getTable('Post')->all();
         $this->render('admin.posts.index', compact('posts'));
     }
 

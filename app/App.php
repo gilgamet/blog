@@ -27,8 +27,8 @@ require_once ROOT . '\core\Database\MySqlDatabase.php';
          */
         public static function load() {
             session_start();
-            require ROOT . '\app\Autoloader.php';
-            Autoloader::register();
+            //require ROOT . '\app\Autoloader.php';
+            //Autoloader::register();
         }
     
         /**

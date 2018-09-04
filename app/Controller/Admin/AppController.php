@@ -1,4 +1,8 @@
 <?php
+namespace App\Controller\Admin;
+
+require_once ROOT . '\app\app.php';
+require_once ROOT . '\core\Auth\DbAuth.php';
 
 class AppController extends app\Controller\AppController{
     

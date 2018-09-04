@@ -1,5 +1,7 @@
 <?php
 
+require_once ROOT . '\core\Entity\Entity.php';
+
 class PostEntity extends Entity{
 
     public function getUrl(){
