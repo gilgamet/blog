@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller\Admin;
-require_once ROOT . "\app\Admin\AppController.php";
+require_once ROOT . "\app\Controller\Admin\AppController.php";
 
 /**
  * Class CategoriesController

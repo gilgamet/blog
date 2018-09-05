@@ -1,16 +1,19 @@
 <?php
 
-/*class Autoloader{
+class Autoloader
+{
 
-    static function Autoload($class){
-        if (strpos($class, __NAMESPACE__ . '\\') === 0){
+    static function Autoload($class)
+    {
+        if (strpos($class, __NAMESPACE__ . '\\') === 0) {
             $class = str_replace(__NAMESPACE__, '', $class);               
             require __DIR__ . $class . '.php';
         }    
     }
 
-    static function register(){
+    static function register()
+    {
         $spl = spl_autoload_register(array(__CLASS__, 'Autoload'));
     }
 
-}*/
+}

@@ -5,21 +5,23 @@ require_once ROOT . '\app\Table\CategoryTable.php';
 require_once ROOT . '\core\Config.php';
 require_once ROOT . '\core\Database\MySqlDatabase.php';
 
-    class App {
+    class App 
+    {
     
-        public $title = "Mon super site";
-        private $db_instance;
-        private static $_instance;
+    public $title = "Mon super site";
+    private $db_instance;
+    private static $_instance;
     
-        /**
-         * (Singleton)
-         * */
-        public static function getInstance() {
-            if (is_null(self::$_instance)) {
+    /**
+     * (Singleton)
+     * 
+     */
+    public static function getInstance() {
+        if (is_null(self::$_instance)) {
                 self::$_instance = new App();
-            }
-            return self::$_instance;
         }
+            return self::$_instance;
+    }
     
         /**
          * Démarre une session
@@ -27,8 +29,10 @@ require_once ROOT . '\core\Database\MySqlDatabase.php';
          */
         public static function load() {
             session_start();
-            //require ROOT . '\app\Autoloader.php';
-            //Autoloader::register();
+            require ROOT . '\app\Autoloader.php';
+            Autoloader::register();
+            require ROOT . '\core\Autoloader.php';
+            Autoloader::register();
         }
     
         /**

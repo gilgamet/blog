@@ -4,7 +4,7 @@ require_once ROOT . "\core\Auth\DbAuth.php";
 require_once ROOT . "\app\App.php";
 
 
-class UsersController extends AppController{
+class UsersController extends AppsController{
 
     public function login(){
         $errors = false;
