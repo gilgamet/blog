@@ -35,6 +35,7 @@ require_once ROOT . '\core\Database\MySqlDatabase.php';
          * Définie la classe en cours pour cibler la table
          * @param string $name nom de la class
          * @return string
+         * MAGIQUE !
          */
 
         public function getTable($name) {

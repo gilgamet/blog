@@ -33,7 +33,7 @@ foreach($articles as $post): ?>
         </ul>    
 </div>
 </div>  
-        <p><a href='index.php?p=home'>Vers les Articles...</a></p>   
+        <p><a href='index.php'>Vers l'accueil</a></p>   
         
         
 

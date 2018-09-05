@@ -3,5 +3,7 @@
 
 <p><em><?= $article->categorie; ?></em></p>
 
-<h2><?=$article->contenu; ?></h2>
+<h3><?=$article->contenu; ?></h3><br/>
 
+
+<p><a href='index.php'>Vers l'accueil</a></p>   
