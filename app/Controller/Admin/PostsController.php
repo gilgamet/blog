@@ -1,9 +1,12 @@
 <?php
 namespace App\Controller\Admin;
 require_once ROOT . "\app\App.php";
+require_once ROOT . "\core\HTML\BootstrapForm.php";
+require_once ROOT . "\core\Auth\DbAuth.php";
+require_once ROOT . "\app\Controller\Admin\AppController.php";
 
 
-class PostsController extends app\Controller\Admin\AppController{
+class PostsController extends AppController{
 
     public function __construct(){
         parent::__construct();
@@ -43,8 +46,7 @@ class PostsController extends app\Controller\Admin\AppController{
                 'category_id' => $_POST["category_id"]
             ]);
          
-            if($result){
-               
+            if($result){              
                 return $this->index();
             }
         }

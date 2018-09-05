@@ -1,5 +1,5 @@
 <?php
-require_once ROOT . "\App\App.php";
+require_once ROOT . "\app\App.php";
 require_once ROOT . "\core\HTML\BootstrapForm.php";
 require_once ROOT . '\core\Database\MySqlDatabase.php';
 require_once ROOT . "app\Table\Article.php";

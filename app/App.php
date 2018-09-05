@@ -46,6 +46,7 @@ require_once ROOT . '\core\Database\MySqlDatabase.php';
         /**
          * Récupère ou créé l'instance de connexion à la bdd a l'aide du fichier config.php
          * 
+         * 
          */
         public function getDb() {
             $config = Config::getInstance(ROOT . '\config\config.php');

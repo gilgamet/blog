@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Controller\Admin;
 require_once ROOT . "\app\Admin\AppController.php";
 
 /**
@@ -21,7 +21,7 @@ class CategoriesController extends AppController {
      */
     public function index() {
         $items = $this->Category->all();
-        App::getInstance()->title = "Administration des Catégories - Billet simple pour l'Alaska";
+        App::getInstance()->title = "";
         $this->render('admin.categories.index', compact('items'));
     }
 

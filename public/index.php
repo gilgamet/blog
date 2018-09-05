@@ -3,7 +3,7 @@
 define('ROOT', dirname(__DIR__));
    require ROOT . "\app\App.php";
    require ROOT . "\app\Controller\PostsController.php";
-   
+   require ROOT . "\app\Controller\Admin\PostsController.php";
    App::load();
    
 
@@ -15,7 +15,7 @@ define('ROOT', dirname(__DIR__));
    
 $page = explode('.', $page);
 if ($page[0] == 'admin'){
-  $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
+  $controller = ucfirst($page[1]) . 'Controller';
   $action = $page[2];
 }else{
   $controller =  ucfirst($page[0]) . 'Controller';
