@@ -37,7 +37,8 @@ class PostTable extends Table{
      * @param $id int
      * @return Entity
      */
-    public function findWithCategory($id){
+    public function findWithCategory($id)
+    {
         return $this->query("
             SELECT articles.id, articles.titre, articles.contenu, articles.date, categories.titre as categorie
             FROM articles
@@ -49,7 +50,8 @@ class PostTable extends Table{
      * @param $id int
      * @return array
      */
-    public function findByCategory($id){
+    public function findByCategory($id)
+    {
         return $this->query("
             SELECT articles.id, articles.titre, articles.contenu, articles.date, categories.titre as categorie
             FROM articles

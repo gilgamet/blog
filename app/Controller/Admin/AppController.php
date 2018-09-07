@@ -11,7 +11,7 @@ require_once ROOT . '\app\Controller\AppsController.php';
  * Si acces non authentifié, page d'erreur
  */
 
-class AppController extends AppsController
+class AppController extends \AppsController
 {
     /**
      * Constructeur a l'appel de la classe
@@ -20,8 +20,8 @@ class AppController extends AppsController
     public function __construct()
     {
         parent::__construct();
-        $app = App::getInstance();
-        $auth = new DbAuth($app->getDb());
+        $app = \App::getInstance();
+        $auth = new \DbAuth($app->getDb());
         if (!$auth->logged()) {
             $this->Forbidden();
         }

@@ -21,7 +21,7 @@
             <td>
                 <a href="?p=admin.categories.edit&id=<?= $category->id; ?>" class="btn btn-primary">Editer</a>       
                 <form action="?p=admin.categories.delete" style='display: inline;' method="post">
-                    <input type="hidden" name='id' value='<?= $category->id; ?>'>
+                    <input type="hidden" name='id' value=' <?php echo $category->id; ?>'>
                 
                 <button type="submit" class="btn btn-danger">Supprimer</button>       
                 </form>

@@ -1,6 +1,7 @@
 <?php
 
-class Config{
+class Config
+{
 
     private $settings = [];
     private static $_instance;

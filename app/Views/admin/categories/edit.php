@@ -6,12 +6,12 @@ require_once ROOT . "app\Table\Article.php";
 require_once ROOT . '\core\Table\Table.php';
 
 $table = App::getInstance()->getTable('Category');
-if(!empty($_POST)){
-    $result = $table->update($_GET['id'],[
+if (!empty($_POST)) {
+    $result = $table->update($_GET['id'], [
         'titre' => $_POST["titre"]
     ]);
  
-    if($result){
+    if ($result) {
        ?>
        <div class="alert alert-success">La categorie a bien été modifiée</div>
        <?php

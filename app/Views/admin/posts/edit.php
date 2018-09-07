@@ -1,19 +1,19 @@
 <?php
 
-require_once ROOT . "\App\App.php";
+require_once ROOT . "\app\App.php";
 require_once ROOT . "\core\HTML\BootstrapForm.php";
 require_once ROOT . "\core\Database\MySqlDatabase.php";
 
 
 $postTable = App::getInstance()->getTable('Post');
-if(!empty($_POST)){
+if (!empty($_POST)) {
     $result = $postTable->update($_GET['id'],[
         'titre' => $_POST["titre"],
         "contenu" => $_POST["contenu"],
         'category_id' => $_POST["category_id"]
     ]);
  
-    if($result){
+    if ($result) {
        
         header('location: admin.php?p=posts.edit&id=' . App::getInstance()->getDb()->lastInsertId());
     }
@@ -21,7 +21,7 @@ if(!empty($_POST)){
 $post = $postTable->find($_GET["id"]);
 $categories = App::getInstance()->getTable('Category')->extract('id', 'titre');
 
-$form = new BootstrapForm($post);
+$form = new \BootstrapForm($post);
 ?>
 
 <form method="post">

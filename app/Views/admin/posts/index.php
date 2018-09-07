@@ -21,7 +21,7 @@
             <td>
                 <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="btn btn-primary">Editer</a>       
                 <form action="?p=admin.posts.delete" style='display: inline;' method="post">
-                    <input type="hidden" name='id' value='<?= $post->id; ?>'>
+                    <input type="hidden" name='id' value='<?php echo $post->id; ?>'>
                 
                 <button type="submit"  class="btn btn-danger">Supprimer</button>       
                 </form>

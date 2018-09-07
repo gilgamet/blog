@@ -1,10 +1,14 @@
 <?php
 
-class Article extends Table{
+require_once ROOT . 'core\Table\Table.php';
+
+class Article extends Table
+{
 
     protected static $table = 'articles';
 
-    public static function getLast(){
+    public static function getLast()
+    {
         $req =  self::query(
             "SELECT articles.id, articles.titre, articles.contenu, categories.titre AS categorie 
             FROM articles 
@@ -23,7 +27,8 @@ class Article extends Table{
         return $html;
     }
 
-    public static function lastByCategory($category_id){
+    public static function lastByCategory($category_id)
+    {
         $req = self::query("SELECT articles.id, articles.titre, articles.contenu, categories.titre AS categorie 
             FROM articles 
             LEFT JOIN categories
@@ -34,7 +39,8 @@ class Article extends Table{
         return $req;
     }   
     
-    public static function find($id){
+    public static function find($id)
+    {
         $req = self::query(
             "SELECT articles.id, articles.titre, articles.contenu, categories.titre as categorie 
             FROM articles 

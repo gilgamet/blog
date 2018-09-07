@@ -14,7 +14,8 @@ class Table {
      * @param string $db Database
      * Défini la database et la classe correspondante à la table à utiliser
      */
-    public function __construct(Database $db) {
+    public function __construct(Database $db) 
+    {
         $this->db = $db;
         if (is_null($this->table)) {
             $parts = explode('\\', get_class($this));
@@ -27,7 +28,8 @@ class Table {
      * Renvoi tout les élément de la table
      * @param $class string Le nom de la classe à charger
      */
-    public function all() {
+    public function all() 
+    {
         return $this->query('SELECT * FROM ' . $this->table);
     }
 
@@ -35,7 +37,8 @@ class Table {
      * Recherche l'élément de la table correspondant à l'id
      * @param int $id Id de l'element à rechercher
      */
-    public function find($id) {
+    public function find($id) 
+    {
         return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
@@ -44,7 +47,8 @@ class Table {
      * @param $int $id Id de l'element à rechercher
      * @param $array $fields Tableau contenant les éléménts à modifier
      */
-    public function update($id, $fields) {
+    public function update($id, $fields) 
+    {
         $sql_parts = [];
         $attributes = [];
         foreach ($fields as $k => $v) {
@@ -60,7 +64,8 @@ class Table {
      * Supprime un élément
      * @param int $id Id de l'element à rechercher
      */
-    public function delete($id) {
+    public function delete($id) 
+    {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
@@ -68,7 +73,8 @@ class Table {
      * Créé un élément 
      * @param array tableau des champs à inserer dans la table
      */
-    public function create($fields) {
+    public function create($fields) 
+    {
         $sql_parts = [];
         $attributes = [];
         foreach ($fields as $k => $v) {
@@ -82,7 +88,8 @@ class Table {
     /**
      * @return array les informations recherchées dans le resultat d'une requête
      */
-    public function extract($key, $value) {
+    public function extract($key, $value) 
+    {
         $records = $this->all();
         $return = [];
         foreach ($records as $k => $v) {

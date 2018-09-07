@@ -10,7 +10,8 @@ require_once ROOT . '\app\Entity\CategoryEntity.php';
 
 
 
-class PostsController extends app\Controller\AppsController
+
+class PostsController extends AppsController
 {
 
     public function __construct()
