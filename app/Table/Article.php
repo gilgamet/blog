@@ -17,11 +17,13 @@ class Article extends Table
         return $req;
     }
 
-    public function getUrl(){
+    public function getUrl()
+    {
         return 'index.php?p=article&id=' . $this->id;
     }
 
-    public function getExtrait(){
+    public function getExtrait()
+    {
         $html = '<p>'. substr($this->contenu, 0, 390) .'...</p>';
         $html .= '<p><a href="'. $this->getUrl() .'">Voir la suite</a></p>';
         return $html;
@@ -34,8 +36,8 @@ class Article extends Table
             LEFT JOIN categories
                 on category_id = categories.id 
             WHERE articles.id=?
-            ORDER BY articles.date DESC"
-            , [$category_id]);
+            ORDER BY articles.date DESC", 
+            [$category_id]);
         return $req;
     }   
     
