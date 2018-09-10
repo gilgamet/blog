@@ -17,8 +17,6 @@ class PostsController extends AppsController
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel = ('Post');
-        $this->loadModel = ('Category');
     }
 
     /**

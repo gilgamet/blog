@@ -3,9 +3,9 @@
 require_once ROOT . "\app\App.php";
 require_once ROOT . "\core\HTML\BootstrapForm.php";
 require_once ROOT . "\core\Database\MySqlDatabase.php";
+require_once ROOT . "\app\Table\PostTable.php";
 
-
-$postTable = App::getInstance()->getTable('Post');
+$postTable = \App::getInstance()->getTable('Post');
 if (!empty($_POST)) {
     $result = $postTable->update($_GET['id'],[
         'titre' => $_POST["titre"],
@@ -18,7 +18,8 @@ if (!empty($_POST)) {
         header('location: admin.php?p=posts.edit&id=' . App::getInstance()->getDb()->lastInsertId());
     }
 }
-$post = $postTable->find($_GET["id"]);
+$post = \App::getInstance()->getTable('Post')->find($_GET["id"]);
+//var_dump($postTable);die();
 $categories = App::getInstance()->getTable('Category')->extract('id', 'titre');
 
 $form = new \BootstrapForm($post);

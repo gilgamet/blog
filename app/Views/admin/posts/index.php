@@ -3,6 +3,7 @@
 
 <p>
     <a href="?p=admin.posts.add" class="btn btn-success">Ajouter</a>
+    <a href="?=admin.categories.index" class="btn btn-success">Gérer les catégories</a>
 </p>
 
 <table class="table">
@@ -19,7 +20,7 @@
             <td><?= $post->id; ?></td>
             <td><?= $post->titre; ?></td>
             <td>
-                <a href="?p=admin.posts.edit&id=<?= $post->id; ?>" class="btn btn-primary">Editer</a>       
+                <a href="?p=admin.posts.edit&id=<?php echo $post->id; ?>" class="btn btn-primary">Editer</a>
                 <form action="?p=admin.posts.delete" style='display: inline;' method="post">
                     <input type="hidden" name='id' value='<?php echo $post->id; ?>'>
                 

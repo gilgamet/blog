@@ -31,8 +31,8 @@
                 <?php endforeach; ?>
         </ul>    
 </div>
-</div>  
-        
+</div>
+
         
         
 

@@ -1,7 +1,8 @@
 <?php
 namespace App\Controller\Admin;
 require_once ROOT . "\app\Controller\Admin\AppController.php";
-
+require_once ROOT . "\app\Entity\CategoryEntity.php";
+require_once ROOT . "\app\app.php";
 /**
  * Class CategoriesController
  * Genère les pages index, ajout, edition et delete
@@ -13,15 +14,14 @@ class CategoriesController extends AppController {
      */
     public function __construct() {
         parent::__construct();
-        $this->loadModel('Category');
     }
 
     /**
      * La vue de la page index
      */
     public function index() {
-        $items = $this->Category->all();
-        App::getInstance()->title = "";
+        $items = \App::getInstance()->getTable('Category')->all();
+        \App::getInstance()->title = "";
         $this->render('admin.categories.index', compact('items'));
     }
 

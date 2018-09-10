@@ -19,8 +19,6 @@ class PostsController extends AppController
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel('Post');
-        $this->loadModel('Category');
     }
 
     /** 
@@ -36,7 +34,7 @@ class PostsController extends AppController
     {
         $postTable = \App::getInstance()->getTable('Post');
         if (!empty($_POST)) {
-            $result = $this->Post->create([
+            $result = $postTable->create([
                 'titre' => $_POST["titre"],
                 "contenu" => $_POST["contenu"],
                 'category_id' => $_POST["category_id"]
@@ -45,9 +43,7 @@ class PostsController extends AppController
                 return $this->index();
             }
     }
-
-            $this->loadModel('Category');
-            $categories = $this->Category->extract('id', 'titre');
+            $categories = \App::getInstance()->getTable('Category')->extract('id', 'titre');
             $form = new \BootstrapForm($_POST);
             $this->render('admin.posts.edit', compact('categories', 'form'));
 }
@@ -55,7 +51,7 @@ class PostsController extends AppController
     public function edit()
     {
         if (!empty($_POST)) {
-            $result = $this->Post->update($_GET['id'], [
+            $result = \App::getInstance()->getTable('Post')->update($_GET['id'], [
                 'titre' => $_POST["titre"],
                 "contenu" => $_POST["contenu"],
                 'category_id' => $_POST["category_id"]
@@ -65,9 +61,8 @@ class PostsController extends AppController
                 return $this->index();
             }
         }
-        $post = $this->Post->find($_GET["id"]);
-        $this->loadModel('Category');
-        $categories = $this->Category->extract('id', 'titre');
+        $post = \App::getInstance()->getTable('Post')->find($_GET["id"]);
+        $categories = \App::getInstance()->getTable('Category')->extract('id', 'titre');
         $form = new \BootstrapForm($post);  
         $this->render('admin.posts.edit', compact('categories', 'form'));
     }
@@ -75,7 +70,7 @@ class PostsController extends AppController
     public function delete()
     {
         if (!empty($_POST)) {
-            $result = $this->Post->delete($_POST['id']);     
+            $result = \App::getInstance()->getTable('Post')->delete($_POST['id']);
                 return $this->index();
         }
         

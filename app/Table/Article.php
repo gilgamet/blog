@@ -1,11 +1,11 @@
 <?php
 
-require_once ROOT . 'core\Table\Table.php';
+require_once ROOT . '\core\Table\Table.php';
 
 class Article extends Table
 {
 
-    protected static $table = 'articles';
+    protected $table = 'articles';
 
     public static function getLast()
     {
@@ -41,7 +41,7 @@ class Article extends Table
         return $req;
     }   
     
-    public static function find($id)
+    public function find($id)
     {
         $req = self::query(
             "SELECT articles.id, articles.titre, articles.contenu, categories.titre as categorie 

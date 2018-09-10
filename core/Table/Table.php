@@ -46,6 +46,7 @@ class Table {
      * Parcours les éléménts du tableau pour les passer à la réquête update
      * @param $int $id Id de l'element à rechercher
      * @param $array $fields Tableau contenant les éléménts à modifier
+     * @return sql
      */
     public function update($id, $fields) 
     {
