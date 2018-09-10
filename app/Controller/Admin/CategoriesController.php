@@ -32,7 +32,7 @@ class CategoriesController extends AppController {
      */
     public function add() {
         if (!empty($_POST)) {
-            $result = $this->Category->create([
+            $result = \App::getInstance()->getTable('Category')->create([
                 'titre' => $_POST['titre'],
             ]);
             return $this->index();

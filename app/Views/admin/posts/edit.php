@@ -1,30 +1,3 @@
-<?php
-
-require_once ROOT . "\app\App.php";
-require_once ROOT . "\core\HTML\BootstrapForm.php";
-require_once ROOT . "\core\Database\MySqlDatabase.php";
-require_once ROOT . "\app\Table\PostTable.php";
-
-$postTable = \App::getInstance()->getTable('Post');
-if (!empty($_POST)) {
-    $result = $postTable->update($_GET['id'],[
-        'titre' => $_POST["titre"],
-        "contenu" => $_POST["contenu"],
-        'category_id' => $_POST["category_id"]
-    ]);
- 
-    if ($result) {
-       
-        header('location: admin.php?p=posts.edit&id=' . App::getInstance()->getDb()->lastInsertId());
-    }
-}
-$post = \App::getInstance()->getTable('Post')->find($_GET["id"]);
-//var_dump($postTable);die();
-$categories = App::getInstance()->getTable('Category')->extract('id', 'titre');
-
-$form = new \BootstrapForm($post);
-?>
-
 <form method="post">
     <?= $form->input('titre', 'titre de l\'article'); ?>
     <?= $form->input("contenu", 'contenu', ['type' => 'textarea']); ?>

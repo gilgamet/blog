@@ -5,7 +5,7 @@ require_once ROOT . "\app\App.php";
 require_once ROOT . "\core\HTML\BootstrapForm.php";
 require_once ROOT . "\core\Auth\DbAuth.php";
 require_once ROOT . "\app\Controller\Admin\AppController.php";
-//require_once ROOT . '\app\Table\Article.php';
+require_once ROOT . '\app\Table\Article.php';
 
 /**
  * Class PostsController
