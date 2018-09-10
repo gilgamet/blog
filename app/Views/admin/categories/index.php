@@ -16,8 +16,8 @@
     <tbody>
         <?php foreach($items as $category):?>
         <tr>
-            <td><?= $category->id; ?></td>
-            <td><?= $category->titre; ?></td>
+            <td><?php echo $category->id; ?></td>
+            <td><?php echo $category->titre; ?></td>
             <td>
                 <a href="?p=admin.categories.edit&id=<?= $category->id; ?>" class="btn btn-primary">Editer</a>       
                 <form action="?p=admin.categories.delete" style='display: inline;' method="post">

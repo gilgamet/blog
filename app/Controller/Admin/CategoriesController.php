@@ -3,6 +3,7 @@ namespace App\Controller\Admin;
 require_once ROOT . "\app\Controller\Admin\AppController.php";
 require_once ROOT . "\app\Entity\CategoryEntity.php";
 require_once ROOT . "\app\app.php";
+require_once ROOT . "\core\HTML\BootstrapForm.php";
 /**
  * Class CategoriesController
  * Genère les pages index, ajout, edition et delete
@@ -36,7 +37,7 @@ class CategoriesController extends AppController {
             ]);
             return $this->index();
         }
-        $form = new BootstrapForm($_POST);
+        $form = new \BootstrapForm($_POST);
         $this->render('admin.categories.edit', compact('form'));
     }
 
@@ -51,8 +52,8 @@ class CategoriesController extends AppController {
             ]);
             return $this->index();
         }
-        $category = $this->Category->find($_GET['id']);
-        $form = new BootstrapForm($category);
+        $category = \App::getInstance()->getTable('Category')->find($_GET['id']);
+        $form = new \BootstrapForm($category);
         $this->render('admin.categories.edit', compact('form'));
     }
 
