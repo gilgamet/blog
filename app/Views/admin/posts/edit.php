@@ -1,6 +1,6 @@
 <form method="post">
-    <?= $form->input('titre', 'titre de l\'article'); ?>
-    <?= $form->input("contenu", 'contenu', ['type' => 'textarea']); ?>
-    <?= $form->select('category_id', 'Categorie', $categories); ?>
+    <?php echo $form->input('titre', 'titre de l\'article'); ?>
+    <?php echo $form->input("contenu", 'contenu', ['type' => 'textarea']); ?>
+    <?php echo $form->select('category_id', 'Categorie', $categories); ?>
     <button class="btn btn-primary">Sauvegarder</button>
 </form>    

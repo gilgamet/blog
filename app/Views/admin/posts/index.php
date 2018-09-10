@@ -3,7 +3,7 @@
 
 <p>
     <a href="?p=admin.posts.add" class="btn btn-success">Ajouter</a>
-    <a href="?=admin.categories.index" class="btn btn-success">Gérer les catégories</a>
+    <a href="?p=admin.categories.index" class="btn btn-success">Gérer les catégories</a>
 </p>
 
 <table class="table">
