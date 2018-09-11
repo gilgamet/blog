@@ -2,13 +2,15 @@
 
 require_once ROOT . "\core\HTML\Form.php";
 
-class BootstrapForm extends Form{
+class BootstrapForm extends Form
+{
 
     /**
      * @param $html string Code HTML à entourer
      * @return string
      */
-    protected function surround($html){
+    protected function surround($html)
+    {
         return "<div class=\"form-group\">{$html}</div>";
     }
 
@@ -18,33 +20,36 @@ class BootstrapForm extends Form{
      * @param array $options
      * @return string
      */
-    public function input($name, $label=null, $options = []){
+    public function input($name, $label=null, $options = [])
+    {
         $type = isset($options['type']) ? $options['type'] : 'text';
         $label = '<label>' . $label . '</label>';
-        if($type === 'textarea'){
+        if ($type === 'textarea') {
             $input = '<textarea name="' . $name . '"placeholder="'.$name.'" class="form-control" style="min-height: 250px; required">' . $this->getValue($name) . '</textarea>';
-        } else{
+        } else {
             $input = '<input type="' . $type . '" name="' . $name .'" id="' . $name .'"placeholder="'.$name. '" value="' . $this->getValue($name) . '" class="form-control" required">';
         }
         return $this->surround($label . $input);
     }
     
-       public function tinyInput($name, $label=null, $options = []){
+    public function tinyInput($name, $label=null, $options = [])
+    {
         $type = isset($options['type']) ? $options['type'] : 'text';
-        if($type === 'textarea'){
-            $input = '<textarea name="' . $name . '"placeholder="'.$name.'" class="tinymce" style="min-height:450px;"  required">' . $this->getValue($name) . '</textarea>';;
-        } else{
+        if ($type === 'textarea') {
+            $input = '<textarea name="' . $name . '"placeholder="'.$name.'" class="tinymce" style="min-height:450px;" required">' . $this->getValue($name) . '</textarea>';;
+        } else {
             $input = '<input type="' . $type . '" name="' . $name .'" id="' . $name .'"placeholder="'.$name. '" value="' . $this->getValue($name) . '" class="form-control" required">';
         }
         return $this->surround($input);
     }
 
-    public function select($name, $label, $options){
+    public function select($name, $label, $options)
+    {
         $label = '<label>' . $label . '</label>';
         $input = '<select class="form-control" name="' . $name . '">';
         foreach($options as $k => $v){
             $attributes = '';
-            if($k == $this->getValue($name)){
+            if ($k == $this->getValue($name)) {
                 $attributes = ' selected';
             }
             $input .= "<option value='$k'$attributes>$v</option>";
@@ -56,7 +61,8 @@ class BootstrapForm extends Form{
     /**
      * @return string
      */
-    public function submit(){
+    public function submit()
+    {
         return $this->surround("<button type='submit' onclick='submitform()' class='btn btn-primary'>Envoyer</button>");
     }
 }

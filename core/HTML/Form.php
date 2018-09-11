@@ -1,6 +1,7 @@
 <?php
 
-class Form{
+class Form
+{
 
     /**
      * @var array Données utilisées par le formulaire
@@ -15,7 +16,8 @@ class Form{
     /**
      * @param array $data Données utilisées par le formulaire
      */
-    public function __construct($data = array()){
+    public function __construct($data = array())
+    {
         $this->data = $data;
     }
 
@@ -23,7 +25,8 @@ class Form{
      * @param $html string Code HTML à entourer
      * @return string
      */
-    protected function surround($html){
+    protected function surround($html)
+    {
         return "<{$this->surround}>{$html}</{$this->surround}>";
     }
 
@@ -31,8 +34,9 @@ class Form{
      * @param $index string Index de la valeur à récupérer
      * @return string
      */
-    protected function getValue($index){
-        if(is_object($this->data)){
+    protected function getValue($index)
+    {
+        if (is_object($this->data)) {
             return $this->data->$index;
         }
         return isset($this->data[$index]) ? $this->data[$index] : null;
@@ -44,7 +48,8 @@ class Form{
      * @param array $options
      * @return string
      */
-    public function input($name, $label, $options = []){
+    public function input($name, $label, $options = [])
+    {
         $type = isset($options['type']) ? $options['type'] : 'text';
         return $this->surround(
             '<input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '">'
@@ -54,7 +59,8 @@ class Form{
     /**
      * @return string
      */
-    public function submit(){
+    public function submit()
+    {
         return $this->surround('<button type="submit">Envoyer</button>');
     }
 
