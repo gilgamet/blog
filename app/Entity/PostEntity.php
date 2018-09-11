@@ -3,7 +3,7 @@
 require_once ROOT . '\core\Entity\Entity.php';
 
 /**
- * Class entity  permet un travail sur l'affichage des données de post (article) 
+ * Class entity  permet un affichage des données de post (article) 
  */
 
 class PostEntity extends Entity

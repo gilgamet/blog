@@ -2,7 +2,8 @@
 
 require_once ROOT . '\core\Table\Table.php';
 
-class PostTable extends Table{
+class PostTable extends Table
+{
 
     protected $table = 'articles';
 

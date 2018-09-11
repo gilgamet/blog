@@ -48,6 +48,10 @@ class PostsController extends AppController
             $this->render('admin.posts.edit', compact('categories', 'form'));
 }
 
+    /** Genere la vue Edit
+     * @param POST 
+     * @return html & $category $post
+     */
     public function edit()
     {
         if (!empty($_POST)) {

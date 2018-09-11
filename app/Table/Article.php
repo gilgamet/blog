@@ -22,6 +22,9 @@ class Article extends Table
         return 'index.php?p=article&id=' . $this->id;
     }
 
+    /**
+     * @return requete sql
+     */
     public function getExtrait()
     {
         $html = '<p>'. substr($this->contenu, 0, 390) .'...</p>';
@@ -29,6 +32,9 @@ class Article extends Table
         return $html;
     }
 
+    /**
+     * @return requete sql
+     */
     public static function lastByCategory($category_id)
     {
         $req = self::query("SELECT articles.id, articles.titre, articles.contenu, categories.titre AS categorie 
@@ -36,11 +42,13 @@ class Article extends Table
             LEFT JOIN categories
                 on category_id = categories.id 
             WHERE articles.id=?
-            ORDER BY articles.date DESC", 
-            [$category_id]);
+            ORDER BY articles.date DESC", [$category_id]);
         return $req;
     }   
     
+    /**
+     * @return requete sql
+     */
     public function find($id)
     {
         $req = self::query(

@@ -4,7 +4,8 @@ require_once ROOT .'\core\Controller\Controller.php';
 require_once ROOT .'\app\App.php';
 
 
-class AppsController extends Controller{
+class AppsController extends Controller
+{
 
     protected $template = 'default';
 
@@ -13,8 +14,4 @@ class AppsController extends Controller{
         $this->viewPath = ROOT . '\\app\\Views\\';
     }
 
-    protected function loadModel($model_name)
-    {
-        $this->$model_name = App::getInstance()->getTable($model_name);
-    }
 }

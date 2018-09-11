@@ -1,6 +1,7 @@
 <?php
 
-class CategoryTable extends Table{
+class CategoryTable extends Table
+{
 
         protected $table = "categories";
 
