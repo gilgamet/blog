@@ -22,7 +22,7 @@ class CategoriesController extends AppController {
      */
     public function index() {
         $items = \App::getInstance()->getTable('Category')->all();
-        \App::getInstance()->title = "";
+        \App::getInstance()->title = "Géstion des categories";
         $this->render('admin.categories.index', compact('items'));
     }
 

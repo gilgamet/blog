@@ -2,7 +2,8 @@
 
 require_once ROOT . '\core\Database\Database.php';
 
-class MySqlDatabase extends Database {
+class MySqlDatabase extends Database 
+{
 
     private $db_name;
     private $db_user;
@@ -10,14 +11,16 @@ class MySqlDatabase extends Database {
     private $db_host;
     private $pdo;
     
-    public function __construct($db_name, $db_user='root', $db_pass='',$db_host='localhost'){
+    public function __construct($db_name, $db_user='root', $db_pass='',$db_host='localhost')
+    {
         $this->db_name=$db_name;
         $this->db_host=$db_host;
         $this->db_user=$db_user;
         $this->db_pass=$db_pass;
     }
    
-    private function getPDO(){
+    private function getPDO()
+    {
         if ($this->pdo === null){
         $pdo = new PDO("mysql:dbname=blog;host=localhost;charset=utf8","root","");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -26,7 +29,8 @@ class MySqlDatabase extends Database {
         return $this->pdo;
     }
 
-    public function query($statement, $class_name = null, $one = false) {
+    public function query($statement, $class_name = null, $one = false) 
+    {
         $req = $this->getPDO()->query($statement);
         if (
                 strpos($statement, 'UPDATE') === 0 ||
@@ -55,7 +59,8 @@ class MySqlDatabase extends Database {
      * @param $one int s'il n'y a qu'un élément à rechercher
      * @return array les éléments de la requête
      */
-    public function prepare($statement, $attributes, $class_name = null, $one = false) {
+    public function prepare($statement, $attributes, $class_name = null, $one = false) 
+    {
         $req = $this->getPDO()->prepare($statement);
         $res = $req->execute($attributes);
         if (
@@ -82,7 +87,8 @@ class MySqlDatabase extends Database {
      * Recupere le dernier article inseré
      */
 
-    public function lastInsertId(){
+    public function lastInsertId()
+    {
         return $this->getPDO()->lastInsertId();
     }
 

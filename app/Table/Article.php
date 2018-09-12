@@ -23,7 +23,7 @@ class Article extends Table
     }
 
     /**
-     * @return requete sql
+     * @return html
      */
     public function getExtrait()
     {

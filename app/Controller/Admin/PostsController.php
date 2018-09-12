@@ -27,6 +27,7 @@ class PostsController extends AppController
     public function index()
     {
         $posts = \App::getInstance()->getTable('Post')->all();
+        \App::getInstance()->title = "Géstion des Articles";
         $this->render('admin.posts.index', compact('posts'));
     }
 

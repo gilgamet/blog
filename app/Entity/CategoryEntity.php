@@ -2,7 +2,6 @@
 
 require_once ROOT . '\core\Entity\Entity.php';
 
-
 class CategoryEntity extends Entity{
 
     public function getUrl(){

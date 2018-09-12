@@ -86,8 +86,9 @@ class Table {
         return $this->query("INSERT INTO {$this->table} SET $sql_part", $attributes, true);
     }
 
-    /**
-     * @return array les informations recherchées dans le resultat d'une requête
+    /**Transforme en array afin de mettre en corrélation la clé et la valeur
+     * 
+     * @return array 
      */
     public function extract($key, $value) 
     {
@@ -100,7 +101,7 @@ class Table {
     }
 
     /**
-     * Prepare les requêtes, s'il y a des données externes, en requête préparée sinon requête simple
+     * Preparation ses requêtes, si transmission de données en requête préparée, sinon requête simple
      */
     public function query($statement, $attributes = null, $one = false) {
         if ($attributes) {

@@ -6,6 +6,7 @@ define('ROOT', dirname(__DIR__));
    require ROOT . "\app\Controller\Admin\PostsController.php";
    require ROOT . "\app\Controller\Admin\CategoriesController.php";
    require ROOT . "\app\Controller\UsersController.php";
+   require ROOT . "\app\Controller\Admin\CommentsController.php";
    App::load();
    
 

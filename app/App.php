@@ -2,6 +2,7 @@
 
 require_once ROOT . '\app\Table\PostTable.php';
 require_once ROOT . '\app\Table\CategoryTable.php';
+require_once ROOT . "\app\Table\CommentsTable.php";
 require_once ROOT . '\core\Config.php';
 require_once ROOT . '\core\Database\MySqlDatabase.php';
 
@@ -29,10 +30,6 @@ require_once ROOT . '\core\Database\MySqlDatabase.php';
      */
     public static function load() {
         session_start();
-        require ROOT . '\app\Autoloader.php';
-        Autoloader::register();
-        require ROOT . '\core\Autoloader.php';
-        Autoloader::register();
     }
     
     /**
