@@ -46,18 +46,5 @@ class PostTable extends Table
             LEFT JOIN categories ON category_id = categories.id
             WHERE articles.id = ?", [$id], true);
     }
-        /**
-     * Récupère un article en liant la catégorie associée
-     * @param $id int
-     * @return array
-     */
-    public function findByCategory($id)
-    {
-        return $this->query("
-            SELECT articles.id, articles.titre, articles.contenu, articles.date, categories.titre as categorie
-            FROM articles
-            LEFT JOIN categories ON category_id = categories.id
-            WHERE articles.visibility_id = ?", [$id]);
-    }
 
 }
