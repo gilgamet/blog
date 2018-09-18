@@ -22,7 +22,7 @@ class CategoriesController extends AppController {
      */
     public function index() {
         $items = \App::getInstance()->getTable('Category')->all();
-        \App::getInstance()->title = "Géstion des categories";
+        \App::getInstance()->title = "Gestion des categories";
         $this->render('admin.categories.index', compact('items'));
     }
 
@@ -58,7 +58,7 @@ class CategoriesController extends AppController {
     }
 
     /**
-     * supprime la categorie ciblée avec l'Id
+     * Supprime la categorie ciblée avec l'Id
      */
     public function delete() {
         if (!empty($_POST)) {
