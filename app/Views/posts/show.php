@@ -1,12 +1,12 @@
 
-<h1><?=$article->titre; ?></h1>
+<h1><?php echo $article->titre; ?></h1>
 
-<p><em><?= $article->categorie; ?></em></p>
+<p><em><?php echo $article->categorie; ?></em></p>
 
-<h3><?=$article->contenu; ?></h3><br/>
+<h3><?php echo$article->contenu; ?></h3><br/>
 
  <div id="comments" class="comment row" >
-        <h4><span class="glyphicon glyphicon-comment"></span> Espace commentaire</h4>
+        <h4><span class="glyphicon glyphicon-comment"></span> Commentaire</h4>
         <div id="newCom"  class="col-sm-12">
             <form method="post">
                 <?php echo $form->input('pseudo'); ?>
