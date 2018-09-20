@@ -12,11 +12,11 @@
 foreach($articles as $post): ?>
 
   
-        <h2><a href="<?= $post->url ;?>"><?= $post->titre; ?></a></h2>
+        <h2><a href="<?php echo $post->url ;?>"><?php echo $post->titre; ?></a></h2>
 
-        <p><em><?= $post->categorie;?></em></p>
+        <p><em><?php echo $post->categorie;?></em></p>
         
-        <p><?= $post->extrait; ?></p>
+        <p><?php echo $post->extrait; ?></p>
 
 
 <?php endforeach; ?>
@@ -28,7 +28,7 @@ foreach($articles as $post): ?>
 <div class="col-sm-4">
         <ul>    
                 <?php foreach($categories as $categorie): ?>
-                <li><a href="<?= $categorie->url; ?>"><?= $categorie->titre; ?></a></li>
+                <li><a href="<?php echo $categorie->url; ?>"><?php echo $categorie->titre; ?></a></li>
                 <?php endforeach; ?>
         </ul>    
 </div>
