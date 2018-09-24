@@ -1,5 +1,6 @@
+
 <?php
-    if($errors): ?>
+    if ($errors): ?>
         <div class="alert alert-danger">
             Identifiants incorrects
         </div>

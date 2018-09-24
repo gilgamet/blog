@@ -67,7 +67,7 @@ class PostsController extends AppsController
         if (empty($_POST['commentaire'])) {
             $errors['contenu'] = "Erreur de contenu";
         }
-        $req = $CommentTable->create([
+        $req = $commentTable->create([
                     'pseudo' => $_POST['pseudo'],
                     'mail' => $_POST['mail'],
                     'contenu' => $_POST['commentaire'],

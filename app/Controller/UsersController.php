@@ -6,7 +6,11 @@ require_once ROOT . "\app\App.php";
 
 class UsersController extends AppsController
 {
-
+    /**
+     * Permet le login de l'utilisateur
+     *
+     * @return vue (users.login)
+     */
     public function login()
     {
         $errors = false;
