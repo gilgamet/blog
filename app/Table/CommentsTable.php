@@ -14,7 +14,8 @@ class CommentsTable extends Table
     public function getAllComments() 
     {
         $req = self::query("SELECT * 
-                FROM comments");
+                FROM comments
+                LEFT JOIN articles ON article_id = articles.id");
                 
 
         return $req;        
@@ -48,7 +49,7 @@ class CommentsTable extends Table
      */
     public function lastComment(){
         return $this->query("
-            SELECT comments.id, comments.pseudo, comments.mail, comments.contenu, comments.reported, articles.contenu as article
+            SELECT comments.id, comments.pseudo, comments.mail, comments.contenu, comments.reported, articles.id as article
             FROM comments
             LEFT JOIN articles ON article_id = articles.id
             ORDER BY articles.date DESC");

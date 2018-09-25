@@ -83,13 +83,13 @@
 
   <?php echo $content; ?>
     
-
- 
+  <?php if (isset($_SESSION['auth'])):?>
+  <?php else: ?>
     <footer class="blog-footer">
     <div class="row">
     <div class="col-sm-8">
         <p>
-            <a href="#">Back to top</a><br/>
+        <br/><br/><a href="#">Back to top</a><br/>
            © Jean Forteroche tous droits réservés<br/>
            © Jean Forteroche All rights reserved 
         </p>   
@@ -102,6 +102,7 @@
           </div>
     </div><!-- /.row -->  
     </footer>
+    <?php endif; ?>
 
        <!-- Bootstrap core JavaScript
     ================================================== -->

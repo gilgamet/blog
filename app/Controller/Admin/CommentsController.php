@@ -22,8 +22,8 @@ class CommentsController extends AppController
      * Génere la vue index
      */
     public function index() {
-        $comments = \App::getInstance()->getTable('comments')->getAllComments();
-        \App::getInstance()->title = "Gestion des commentaires";
+        $comments = \App::getInstance()->getTable('comments')->lastComment();
+        \App::getInstance()->title = "Gestion des commentaires";      
         $this->render('admin.comments.index', compact('comments'));
     }
 
@@ -46,8 +46,9 @@ class CommentsController extends AppController
             }
         }
         $comment = \App::getInstance()->getTable('comments')->find($_GET['id']);
+        $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
         $form = new \BootstrapForm($comment);  
-        $this->render('admin.comments.edit', compact('form'));
+        $this->render('admin.comments.edit', compact('article', 'form'));
     }
 
     /**
@@ -67,7 +68,6 @@ class CommentsController extends AppController
      */
     public function show() {
         $comments = \App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
-        App::getInstance()->title = $comment[0]->username . " - Billet simple pour l'Alaska";
         $this->render('admin.comments.show', compact('comments'));
     }
 }

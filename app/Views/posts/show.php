@@ -11,4 +11,5 @@ $content = ob_get_clean();
 require_once 'comments.php';
 ?>
 
-<p><a href='index.php'>Vers l'accueil</a></p>   
+<p><a href='index.php'>Vers l'accueil</a></p>
+  

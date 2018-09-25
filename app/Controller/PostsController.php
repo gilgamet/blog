@@ -45,9 +45,9 @@ class PostsController extends AppsController
     public function show()
     {
         $commentTable = \App::getInstance()->getTable('comments');
-        $article = App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
+        $article = \App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
         $form = new \BootstrapForm($_POST);
-        $this->render('posts.show', compact('article', 'form'));
+        $this->render('posts.show', compact('article', 'comments', 'form'));
     }
 
         /**
@@ -71,7 +71,7 @@ class PostsController extends AppsController
                     'pseudo' => $_POST['pseudo'],
                     'mail' => $_POST['mail'],
                     'contenu' => $_POST['commentaire'],
-                    'ref' => 'articles'
+                    'article' => 'articles'
         ]);
         if ($req) {    
             return $this->index();
