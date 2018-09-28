@@ -18,8 +18,8 @@
     <tbody>
         <?php foreach($posts as $post):?>
         <tr>
-            <td><?= $post->id; ?></td>
-            <td><?= $post->titre; ?></td>
+            <td><?php echo $post->id; ?></td>
+            <td><?php echo $post->titre; ?></td>
             <td>
                 <a href="?p=admin.posts.edit&id=<?php echo $post->id; ?>" class="btn btn-primary">Editer</a>
                 <form action="?p=admin.posts.delete" style='display: inline;' method="post">

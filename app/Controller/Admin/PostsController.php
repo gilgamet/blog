@@ -14,7 +14,7 @@ require_once ROOT . '\app\Table\Article.php';
 class PostsController extends AppController
 {
     /**
-     * Constructeur qui reprend le constructeur du parent et au chargement fait un factory d'appel a loadmodel pourune instance app 
+     * Constructeur qui reprend le constructeur du parent  
      */
     public function __construct()
     {

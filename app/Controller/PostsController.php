@@ -45,6 +45,16 @@ class PostsController extends AppsController
     public function show()
     {
         $commentTable = \App::getInstance()->getTable('comments');
+        if (!empty($_POST['pseudo'])) {
+            $result = $this->comment->newComment();
+            if ($result) {
+                unset($_POST['pseudo']);
+                unset($_POST['email']);
+                unset($_POST['commentaire']);
+                return $this->show();
+            }
+        }
+        
         $article = \App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
         $form = new \BootstrapForm($_POST);
         $this->render('posts.show', compact('article', 'comments', 'form'));
@@ -54,7 +64,7 @@ class PostsController extends AppsController
      * Création d'un commentaire 
      *  @return request
      */
-    public function save() 
+    public function newComment() 
     {
         $commentTable = \App::getInstance()->getTable('comments');
         $errors = [];
@@ -71,11 +81,16 @@ class PostsController extends AppsController
                     'pseudo' => $_POST['pseudo'],
                     'mail' => $_POST['mail'],
                     'contenu' => $_POST['commentaire'],
-                    'article' => 'articles'
+                    'reported' => $_POST['reported'],
+                    'article_id' => $_POST['article_id']
         ]);
         if ($req) {    
             return $this->index();
         }
-    }
+        $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
+        $form = new \BootstrapForm($_POST);
+        $this->render('admin.comments.edit', compact('article', 'form'));
 
+    }
+    
 }

@@ -1,5 +1,5 @@
 
-<h1><?= $categorie->titre; ?></h1>
+<h1><?php echo $categorie->titre; ?></h1>
 
 <div class="row">
         <div class="col-sm-8">

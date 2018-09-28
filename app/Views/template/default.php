@@ -87,7 +87,9 @@
   <?php else: ?>
     <footer class="blog-footer">
     <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-4">
         <p>
         <br/><br/><a href="#">Back to top</a><br/>
            © Jean Forteroche tous droits réservés<br/>
