@@ -6,8 +6,8 @@ require_once ROOT . "\app\Table\CommentsTable.php";
 require_once ROOT . '\core\Config.php';
 require_once ROOT . '\core\Database\MySqlDatabase.php';
 
-    class App 
-    {
+class App 
+{
     
     public $title = "Mon super site";
     private $db_instance;

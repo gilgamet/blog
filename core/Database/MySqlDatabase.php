@@ -22,9 +22,9 @@ class MySqlDatabase extends Database
     private function getPDO()
     {
         if ($this->pdo === null){
-        $pdo = new PDO("mysql:dbname=blog;host=localhost;charset=utf8","root","");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->pdo = $pdo;
+            $pdo = new PDO("mysql:dbname=blog;host=localhost;charset=utf8","root","");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->pdo = $pdo;
         }  
         return $this->pdo;
     }
@@ -32,10 +32,9 @@ class MySqlDatabase extends Database
     public function query($statement, $class_name = null, $one = false) 
     {
         $req = $this->getPDO()->query($statement);
-        if (
-                strpos($statement, 'UPDATE') === 0 ||
-                strpos($statement, 'INSERT') === 0 ||
-                strpos($statement, 'DELETE') === 0
+        if (strpos($statement, 'UPDATE') === 0 
+            || strpos($statement, 'INSERT') === 0 
+            || strpos($statement, 'DELETE') === 0
         ) {
             return $req;
         }
@@ -54,6 +53,7 @@ class MySqlDatabase extends Database
 
     /**
      * Prepare les requête puis l'éxécute
+     * 
      * @param $statement string le type de la requête
      * @param $class_name string le nom de la table à rechercher
      * @param $one int s'il n'y a qu'un élément à rechercher
@@ -63,10 +63,9 @@ class MySqlDatabase extends Database
     {
         $req = $this->getPDO()->prepare($statement);
         $res = $req->execute($attributes);
-        if (
-                strpos($statement, 'UPDATE') === 0 ||
-                strpos($statement, 'INSERT') === 0 ||
-                strpos($statement, 'DELETE') === 0
+        if (strpos($statement, 'UPDATE') === 0 
+            || strpos($statement, 'INSERT') === 0 
+            || strpos($statement, 'DELETE') === 0
         ) {
             return $res;
         }

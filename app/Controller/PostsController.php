@@ -46,11 +46,12 @@ class PostsController extends AppsController
     {
         $commentTable = \App::getInstance()->getTable('comments');
         if (!empty($_POST['pseudo'])) {
-            $result = $this->comment->newComment();
+            $result = $this->newComment();
             if ($result) {
                 unset($_POST['pseudo']);
-                unset($_POST['email']);
-                unset($_POST['commentaire']);
+                unset($_POST['mail']);
+                unset($_POST['contenu']);
+                unset($_POST['reported']);
                 return $this->show();
             }
         }
@@ -68,24 +69,18 @@ class PostsController extends AppsController
     {
         $commentTable = \App::getInstance()->getTable('comments');
         $errors = [];
-        if (empty($_POST['pseudo'])) {
-            $errors['pseudo'] = "Vous n'avez pas rentré de pseudo";
-        }
-        if (empty($_POST['mail']) || filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-            $errors['mail'] = "Erreur d'email";
-        }
-        if (empty($_POST['commentaire'])) {
-            $errors['contenu'] = "Erreur de contenu";
-        }
+        if (!empty($_POST)) {
+        
         $req = $commentTable->create([
                     'pseudo' => $_POST['pseudo'],
-                    'mail' => $_POST['mail'],
+                    'mail' => $_POST['email'],
                     'contenu' => $_POST['commentaire'],
-                    'reported' => $_POST['reported'],
-                    'article_id' => $_POST['article_id']
+                    'article_id' => $_GET['article_id']
         ]);
-        if ($req) {    
-            return $this->index();
+        if ($req) 
+            {    
+                return $this->index();
+            }
         }
         $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
         $form = new \BootstrapForm($_POST);

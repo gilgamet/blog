@@ -26,4 +26,13 @@ class UsersController extends AppsController
         $form = new BootstrapForm($_POST);
         $this->render('users.login', compact('form', 'errors'));
     }
+
+    /**
+     * Se deconnecte de la session en cours
+     * @return header('Location')
+     */
+    public function sign_out() {
+        unset($_SESSION["auth"]);
+        header('Location: index.php');
+    }
 }

@@ -1,3 +1,33 @@
 .twitter{
     color: #0056b3;
 }
+body{
+        position: relative;
+        z-index: 1;
+}
+
+body:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../images/denali.jpg");
+    opacity: 0.6;
+    color: beige;  
+    background-size: cover;
+}
+
+.blog-header-logo{
+    color: beige;
+}
+
+.btn-outline-secondary{
+    border-bottom-color: beige;
+    background-color: white;
+}
+.card-text{
+    color:black;
+}
