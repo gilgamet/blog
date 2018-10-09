@@ -44,7 +44,7 @@ class PostsController extends AppsController
 
     public function show()
     {
-        $commentTable = \App::getInstance()->getTable('comments');
+        $commentTable = App::getInstance()->getTable('comments');
         if (!empty($_POST['pseudo'])) {
             $result = $this->newComment();
             if ($result) {
@@ -56,9 +56,9 @@ class PostsController extends AppsController
             }
         }
         
-        $article = \App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
-        $form = new \BootstrapForm($_POST);
-        $this->render('posts.show', compact('article', 'comments', 'form'));
+        $article = App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
+        $form = new BootstrapForm($_POST);
+        $this->render('posts.show', compact('article', 'commentTable', 'form'));
     }
 
         /**

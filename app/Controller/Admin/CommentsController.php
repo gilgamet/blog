@@ -37,8 +37,9 @@ class CommentsController extends AppController
             $result = \App::getInstance()->getTable('comments')->update($_GET['id'], [
                 'pseudo' => $_POST["pseudo"],
                 "contenu" => $_POST["contenu"],
+                "reported" => $_POST["reported"],
                 "mail" => $_POST['mail'],
-                'article_id' => $_POST["article_id"]
+                
             ]);
          
             if ($result) {              
@@ -68,6 +69,7 @@ class CommentsController extends AppController
      */
     public function show() {
         $comments = \App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
-        $this->render('admin.comments.show', compact('comments'));
+        $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
+        $this->render('admin.comments.show', compact('article', 'comments'));
     }
 }

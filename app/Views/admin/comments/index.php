@@ -9,7 +9,7 @@
             <td>Pseudo</td>
             <td>Mail</td>
             <td>Contenu</td>          
-            <td>article_Id</td>
+            
         </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
             <td><?php echo $comment['pseudo']; ?></td>
             <td><?php echo $comment['mail']; ?></td>
             <td><?php echo $comment['contenu']; ?></td> 
-            <td><?php echo $comment['article']; ?></td>
+            
             <td>
                 <a href="?p=admin.comments.edit&id=<?php echo $comment['id']; ?>" class="btn btn-primary">Editer</a>       
                 <form action="?p=admin.comments.delete" style='display: inline;' method="post">
