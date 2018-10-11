@@ -35,7 +35,7 @@
         <?php echo $form->input('commentaire', null, ['type' => 'textarea']); ?>    
         <?php echo $form->submit(); ?>
     </form>
-    <br/>
+    <br/><br/><br/>
 </div>
 </div>
 

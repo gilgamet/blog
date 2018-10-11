@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-sm-1">
-    </div>    
+        <div class="col-sm-1">
+        </div>    
         <div class="col-sm-8">
 <?php 
 
@@ -15,15 +15,16 @@ foreach($posts as $post): ?>
 <?php endforeach; ?>
 
 </div>
-<div class="col-sm-3">
+        <div class="col-sm-3">
 
-        <ul>    
-                <?php 
-                foreach($categories as $categorie): ?>
-                        <li><a href="<?php echo $categorie->url; ?>">
-                        <?php echo $categorie->titre; ?></a></li>
-                <?php endforeach; ?>
-        </ul>    
+                <ul>    
+                        <?php 
+                        foreach($categories as $categorie): ?>
+                                <li><a href="<?php echo $categorie->url; ?>">
+                                <div id='category'><?php echo $categorie->titre; ?></a></div>
+                                </li>
+                        <?php endforeach; ?>
+                </ul>    
         </div>    
 </div>        
 

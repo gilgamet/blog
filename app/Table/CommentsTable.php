@@ -27,10 +27,10 @@ class CommentsTable extends Table
      */
     public function getCommentsById($id) 
     {
-        $req = $this->query("SELECT *
+        $req = $this->query("SELECT articles.id, articles.titre, articles.contenu, articles.date, comments.id, comments.pseudo, comments.contenu 
             FROM articles
-            LEFT JOIN comments ON comment_id = comment.id
-           ", [$id]);
+            LEFT JOIN comments ON comment_id = comments.id
+            WHERE articles.id = ?", [$id]);
         return $req;
                 
     }
