@@ -5,7 +5,7 @@ require_once ROOT . "\core\Controller\Controller.php";
 require_once ROOT . "\app\Table\PostTable.php";
 require_once ROOT . "\app\App.php";
 require_once ROOT . "\core\Table\Table.php";
-require_once ROOT . '\app\Entity\PostEntity.php';
+require_once ROOT . "\app\Entity\PostEntity.php";
 require_once ROOT . '\app\Entity\CategoryEntity.php';
 require_once ROOT . "\core\HTML\BootstrapForm.php";
 
@@ -44,7 +44,7 @@ class PostsController extends AppsController
 
     public function show()
     {
-        $commentTable = App::getInstance()->getTable('comments');
+        $comments = App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
         if (!empty($_POST['pseudo'])) {
             $result = $this->newComment();
             if ($result) {
@@ -58,7 +58,7 @@ class PostsController extends AppsController
         
         $article = App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
         $form = new BootstrapForm($_POST);
-        $this->render('posts.show', compact('article', 'commentTable', 'form'));
+        $this->render('posts.show', compact('article', 'comments', 'form'));
     }
 
         /**
@@ -75,7 +75,7 @@ class PostsController extends AppsController
                     'pseudo' => $_POST['pseudo'],
                     'mail' => $_POST['email'],
                     'contenu' => $_POST['commentaire'],
-                    'article_id' => $_GET['article_id']
+                    
         ]);
         if ($req) 
             {    

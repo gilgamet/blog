@@ -69,7 +69,7 @@
                 <a class="text-dark" href="#"></a>
               </h3>
               <div class="mb-1 text-muted"></div>
-              <p class="card-text mb-auto">Nascitur diversitate potest inanes<br/> pomerium coluntur   mmmmmmmmmmmmmmmmmmmmmmmmm</p>
+              <p class="card-text mb-auto">Nascitur diversitate potest inanes<br/> pomerium coluntur mmmmmmm</p>
               <a href="index.php?p=posts.show&id=8">Lire la suite</a>
             </div>
             <img class="card-img-right flex-auto d-none d-lg-block" src="..\public\images\Alaska.jpg" alt="Card image cap" height="311.2" width="358.483">

@@ -38,8 +38,7 @@ class PostsController extends AppController
             $result = $postTable->create([
                 'titre' => $_POST["titre"],
                 "contenu" => $_POST["contenu"],
-                'category_id' => $_POST["category_id"]
-    ]);
+                'category_id' => $_POST["category_id"] ]);
             if ($result) {    
                 return $this->index();
             }

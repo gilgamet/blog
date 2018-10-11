@@ -27,12 +27,11 @@ class CommentsTable extends Table
      */
     public function getCommentsById($id) 
     {
-        $req1 = self::query(
-            "SELECT *
-            FROM comments
-            LEFT JOIN articles ON comment_id = comment.id
-            WHERE articles.id=?", [$id], true);
-        return $req1;
+        $req = $this->query("SELECT *
+            FROM articles
+            LEFT JOIN comments ON comment_id = comment.id
+           ", [$id]);
+        return $req;
                 
     }
 
@@ -50,8 +49,8 @@ class CommentsTable extends Table
      * @return array
      */
     public function lastComment(){
-        return self::query("
-            SELECT comments.id, comments.pseudo, comments.mail, comments.contenu, comments.reported
+        return $this->query(
+            "SELECT comments.id, comments.pseudo, comments.mail, comments.contenu, comments.reported
             FROM comments
             ORDER BY comments.date DESC");
     }

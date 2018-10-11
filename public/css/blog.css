@@ -28,6 +28,16 @@ body:before{
     border-bottom-color: beige;
     background-color: white;
 }
+
 .card-text{
     color:black;
+}
+
+.btn-default{
+    background-color: rgb(52, 58, 64);
+    color: white;
+}
+
+li{
+    list-style-type: none;
 }

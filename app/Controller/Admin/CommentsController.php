@@ -7,6 +7,7 @@ require_once ROOT . '\app\app.php';
 require_once ROOT . '\app\Controller\AppsController.php';
 require_once ROOT . '\app\Table\CommentsTable.php';
 require_once ROOT . "\core\HTML\BootstrapForm.php";
+require_once ROOT . "\app\Entity\CommentsEntity.php";
 
 
 class CommentsController extends AppController
