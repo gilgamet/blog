@@ -1,3 +1,4 @@
+<br/><br/>
 <form method="post">
     <?php echo $form->input('pseudo', 'pseudo'); ?>
     <?php echo $form->input('mail', null, ['type' => 'email']); ?>
