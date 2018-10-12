@@ -63,14 +63,5 @@ class CommentsController extends AppController
             return $this->index();
         }
     }
-
-    /**
-     * Genere la page show
-     * @return html
-     */
-    public function show() {
-        $comments = \App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
-        $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
-        $this->render('admin.comments.show', compact('article', 'comments'));
-    }
+  
 }

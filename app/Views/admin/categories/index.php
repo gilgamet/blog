@@ -19,7 +19,7 @@
             <td><?php echo $category->id; ?></td>
             <td><?php echo $category->titre; ?></td>
             <td>
-                <a href="?p=admin.categories.edit&id=<?= $category->id; ?>" class="btn btn-primary">Editer</a>       
+                <a href="?p=admin.categories.edit&id=<?php echo $category->id; ?>" class="btn btn-primary">Editer</a>       
                 <form action="?p=admin.categories.delete" style='display: inline;' method="post">
                     <input type="hidden" name='id' value=' <?php echo $category->id; ?>'>
                 

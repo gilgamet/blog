@@ -31,7 +31,7 @@ class CommentsTable extends Table
         $req = $this->query("SELECT articles.id, articles.titre, articles.contenu, articles.date, comments.id, comments.pseudo, comments.contenu 
             FROM articles
             LEFT JOIN comments ON article_id = articles.id
-            WHERE articles.id = ?", [$id]);
+            WHERE article_id = ?", [$id]);
         return $req;
                 
     }
