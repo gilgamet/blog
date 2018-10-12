@@ -44,7 +44,7 @@ class PostsController extends AppsController
 
     public function show()
     {
-        $comments = App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
+        
         if (!empty($_POST['pseudo'])) {
             $result = $this->newComment();
             if ($result) {
@@ -54,8 +54,9 @@ class PostsController extends AppsController
                 unset($_POST['reported']);
                 return $this->show();
             }
+            
         }
-        
+        $comments = App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
         $article = App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
         $form = new BootstrapForm($_POST);
         $this->render('posts.show', compact('article', 'comments', 'form'));
@@ -72,9 +73,9 @@ class PostsController extends AppsController
         if (!empty($_POST)) {
         
         $req = $commentTable->create([
-                    'pseudo' => $_POST['pseudo'],
-                    'mail' => $_POST['email'],
-                    'contenu' => $_POST['commentaire'],
+                    'pseudo' => htmlspecialchars($_POST['pseudo']),
+                    'mail' => htmlspecialchars($_POST['email']),
+                    'contenu' => htmlspecialchars($_POST['commentaire']),
                     
         ]);
         if ($req) 
@@ -87,5 +88,16 @@ class PostsController extends AppsController
         $this->render('admin.comments.edit', compact('article', 'form'));
 
     }
-    
+
+    public function report()
+    {
+        if (!empty($_POST)) {
+            $result = \App::getInstance()->getTable('comments')->update($_GET['id'],       
+                ['reported' => $_POST['reported']]);  
+            return $this->index();
+        }
+        $comm = \App::getInstance()->getTable('comments')->findComment($_GET['id']);
+        $form = new \BootstrapForm($comm);
+        $this->render('admin.post.show', compact($form));
+    }   
 }

@@ -8,12 +8,14 @@
 
         <h3><?php echo $article->contenu; ?></h3><br/>
     </div>
-</div>  
+</div>
+
 <?php
 ob_start();
 $content = ob_get_clean();
 require_once 'comments.php';
 ?>
+
 <div class="row">
     <div class="col-sm-1">
     </div>      

@@ -14,7 +14,8 @@ class CommentsTable extends Table
     public function getAllComments($id) 
     {
         $req = $this->query("SELECT * 
-                FROM comments");
+                FROM comments
+                WHERE comments.id = ?", [$id]);
                 
 
         return $req;        
@@ -29,7 +30,7 @@ class CommentsTable extends Table
     {
         $req = $this->query("SELECT articles.id, articles.titre, articles.contenu, articles.date, comments.id, comments.pseudo, comments.contenu 
             FROM articles
-            LEFT JOIN comments ON comment_id = comments.id
+            LEFT JOIN comments ON article_id = articles.id
             WHERE articles.id = ?", [$id]);
         return $req;
                 
@@ -44,7 +45,7 @@ class CommentsTable extends Table
         return $this->query("UPDATE comments SET reported = reported + 1 WHERE id = ?", [$id]);
     }
 
-            /**
+    /**
      * Récupère les derniers commentaires
      * @return array
      */
@@ -53,6 +54,14 @@ class CommentsTable extends Table
             "SELECT comments.id, comments.pseudo, comments.mail, comments.contenu, comments.reported
             FROM comments
             ORDER BY comments.date DESC");
+    }
+
+    public function findComment($id)
+    {
+        $req = $this->query(
+            "SELECT  comments.id, comments.reported 
+            FROM comments", [$id], true);
+        return $req;
     }
 
 }

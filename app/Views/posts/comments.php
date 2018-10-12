@@ -1,29 +1,29 @@
-<div class="row" >
-<div class="col-sm-1">
-</div>
 
 <?php if(!empty($comments)): ?>
 
     <?php foreach ($comments as $comment): ?>
-<div class="col-sm-8">
-    <p>
-        <strong><em><?php echo $comment->pseudo; ?></em></strong>
-    </p>
-        <p><?php echo $comment->contenu; ?></p>
+        <div class="row" >
+            <div class="col-sm-1">
+            </div>
+                <div class="col-sm-8">
+                    <p>
+                        <strong><em><?php echo htmlspecialchars($comment->pseudo); ?></em></strong>
+                    </p>
+                    <p><?php echo htmlspecialchars($comment->contenu);?></p>
 
-                        <form action="?p=posts.alert" method="post" style="display: inline;">
-                            <input type="hidden" name="id" value="<?php echo $comment->id ?>">
-                            <input type="hidden" name="comment_id" value="<?php echo $_GET['id'] ?>">
-                            <button type="submit" class="btn btn-default btn-sm" data-toggle="confirmation" data-singleton="true" title="Signaler ce commentaire">Signaler ce commentaire</button>
-                        </form>
-
-                    </div>
+                    <form action="?p=posts.report" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="<?php echo $comment->id ?>">
+                        <input type="hidden" name="comments_id" value="<?php echo $_GET['id'] ?>">
+                        <button type="submit" class="btn btn-default btn-sm"  title="Signaler ce commentaire">Signaler ce commentaire</button>
+                    </form>
+                    <br/><br/><br/>
                 </div>
-            <?php endforeach; ?>
-        <?php else: ?>     
-            <div class="col-sm-12">Il n'y a pas encore de commentaire sur cet article</div><br/>
-        <?php endif; ?>
-</div>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>     
+    <div class="col-sm-12">Il n'y a pas encore de commentaire sur cet article</div><br/>
+<?php endif; ?>
+
 <div id="comments" class="row" >
 <div class="col-sm-1">
 </div>
