@@ -18,6 +18,9 @@ class PostsController extends AppsController
     public function __construct()
     {
         parent::__construct();
+        $this->loadModel('Post');
+        $this->loadModel('Category');
+        $this->loadModel('Comments');
     }
 
     /**
@@ -69,35 +72,38 @@ class PostsController extends AppsController
     public function newComment() 
     {
         $commentTable = \App::getInstance()->getTable('comments');
-        $errors = [];
         if (!empty($_POST)) {
         
-        $req = $commentTable->create([
+            $req = $commentTable->create([
                     'pseudo' => htmlspecialchars($_POST['pseudo']),
                     'mail' => htmlspecialchars($_POST['email']),
                     'contenu' => htmlspecialchars($_POST['commentaire']),
-                    
-        ]);
-        if ($req) 
-            {    
-                return $this->index();
-            }
+                    'reported' => $_POST['reported'],
+                    'article_id' => $_GET['id']                        
+            ]);
+            if ($req) { 
+                return $this->index(); }
         }
+        $commentTable = \App::getInstance()->getTable('comments')->getCommentById($_POST['id']);
         $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
         $form = new \BootstrapForm($_POST);
-        $this->render('admin.comments.edit', compact('article', 'form'));
-
+        $this->render('admin.comments.edit', compact('commentTable', 'article', 'form'));
     }
 
-    public function report()
+    /**
+     * Signale un commentaire
+     * @return header
+     */
+    public function report() 
     {
+        $result = \App::getInstance()->getTable('comments');
+        $compte = $comment->reported + 1;
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('comments')->update($_GET['id'],       
-                ['reported' => $_POST['reported']]);  
-            return $this->index();
+            
+            $req = $result->report([
+                    'reported' => $compte,
+                    'id' => $comment->id
+            ]);
         }
-        $comm = \App::getInstance()->getTable('comments')->findComment($_GET['id']);
-        $form = new \BootstrapForm($comm);
-        $this->render('admin.post.show', compact($form));
     }   
 }

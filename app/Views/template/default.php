@@ -50,7 +50,7 @@
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
+              <strong class="d-inline-block mb-2 text-primary">Chapitre 1</strong>
               <h3 class="mb-0">
                 <a class="text-dark" href="#"></a>
               </h3>
@@ -64,7 +64,7 @@
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <strong class="d-inline-block mb-2 text-success">Chapitre 2</strong>
               <h3 class="mb-0">
                 <a class="text-dark" href="#"></a>
               </h3>
@@ -81,7 +81,7 @@
 </div>
 </div>
 
-    <?php echo $content; ?>
+    <?php echo $content; ?><br/><br/><br/><br/><br/><br/><br/>  
     
     <?php if (isset($_SESSION['auth'])):?>
     <?php else: ?>

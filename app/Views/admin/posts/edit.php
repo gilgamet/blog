@@ -1,3 +1,5 @@
+
+<br/>
 <form method="post">
     <?php echo $form->input('titre', 'titre de l\'article'); ?>
     <?php echo $form->tinyInput("contenu", 'contenu', ['type' => 'textarea']); ?>

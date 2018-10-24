@@ -11,10 +11,10 @@
                     </p>
                     <p><?php echo htmlspecialchars($comment->contenu);?></p>
 
-                    <form action="?p=posts.report" method="post" style="display: inline;">
+                    <form action="?p=posts.show&id= <?php echo $_GET['id']; ?>" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="<?php echo $comment->id ?>">
-                        <input type="hidden" name="article_id" value="<?php echo $_GET['id'] ?>">
-                        <button type="submit" class="btn btn-default btn-sm"  title="Signaler ce commentaire">Signaler ce commentaire</button>
+                        <input type="hidden" name="reported" value="<?php echo $comment->reported?>">
+                        <button type="submit" class="btn btn-default btn-sm"  title="<?php echo $comment->id ?><?php echo $comment->reported ?><?php $comment->reported?>">Signaler ce commentaire</button>
                     </form>
                     <br/><br/><br/>
                 </div>

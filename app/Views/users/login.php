@@ -10,8 +10,8 @@
 <?php endif; ?>        
 
 <form method="post">
-    <?= $form->input('username', 'Pseudo'); ?>
-    <?= $form->input("password", 'Mot de passe', ['type' => 'password']); ?>
+    <?php echo $form->input('username', 'Pseudo'); ?>
+    <?php echo $form->input("password", 'Mot de passe', ['type' => 'password']); ?>
     <button class="btn btn-primary">Envoyer</button>
-</form>    
-</div>
+</form> 
+<br/><br/><br/><br/><br/><br/><br/></div> 

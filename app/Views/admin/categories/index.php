@@ -1,5 +1,5 @@
-
-<h1>Administrer les categories</h1>
+<br/>
+<h1>Administrer les Chapitres</h1>
 
 <p>
     <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>

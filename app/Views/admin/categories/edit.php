@@ -1,4 +1,9 @@
-<form method="post">
-    <?php echo $form->input('titre', 'titre de la categorie'); ?>
+
+<br/><form method="post">
+    <?php echo $form->input('titre', 'Titre du Chapitre'); ?>
     <button class="btn btn-primary">Sauvegarder</button>
-</form>    
+
+<br/><br/><br/><br/> 
+
+</form>
+

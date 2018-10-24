@@ -20,7 +20,7 @@ foreach($posts as $post): ?>
                 <ul>    
                         <?php 
                         foreach($categories as $categorie): ?>
-                                <li><a href="<?php echo $categorie->url; ?>">
+                                <li><a id='categories' href="<?php echo $categorie->url; ?>" >
                                 <div id='category'><?php echo $categorie->titre; ?></a></div>
                                 </li>
                         <?php endforeach; ?>

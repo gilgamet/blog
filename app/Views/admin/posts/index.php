@@ -1,9 +1,9 @@
-
+<br/>
 <h1>Administrer les articles</h1>
 
 <p>
-    <a href="?p=admin.posts.add" class="btn btn-success">Ajouter</a>
-    <a href="?p=admin.categories.index" class="btn btn-success">Gérer les catégories</a>
+    <a href="?p=admin.posts.add" class="btn btn-success">Ajouter un article</a>
+    <a href="?p=admin.categories.index" class="btn btn-success">Gérer les chapitres</a>
     <a href="?p=admin.comments.index" class="btn btn-success">Gérer les commentaires</a>
 </p>
 

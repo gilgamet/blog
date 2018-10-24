@@ -30,7 +30,7 @@ body:before{
 }
 
 .card-text{
-    color:black;
+    color:#343a40;
 }
 
 .btn-default{
@@ -40,4 +40,8 @@ body:before{
 
 li{
     list-style-type: none;
+}
+
+#categories{
+    color:#343a40;
 }

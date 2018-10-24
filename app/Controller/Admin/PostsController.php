@@ -35,10 +35,12 @@ class PostsController extends AppController
     {
         $postTable = \App::getInstance()->getTable('Post');
         if (!empty($_POST)) {
-            $result = $postTable->create([
+            $result = $postTable->create
+            ([
                 'titre' => $_POST["titre"],
                 "contenu" => $_POST["contenu"],
-                'category_id' => $_POST["category_id"] ]);
+                'category_id' => $_POST["category_id"] 
+            ]);
             if ($result) {    
                 return $this->index();
             }

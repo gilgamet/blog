@@ -86,7 +86,7 @@ class Table {
         return $this->query("INSERT INTO {$this->table} SET $sql_part", $attributes, true);
     }
 
-    /** transforme en array 
+    /** transforme en array (sous forme clé = value)
      * 
      * @return array 
      */
