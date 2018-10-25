@@ -14,7 +14,7 @@
                     <form action="?p=posts.show&id= <?php echo $_GET['id']; ?>" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="<?php echo $comment->id ?>">
                         <input type="hidden" name="reported" value="<?php echo $comment->reported?>">
-                        <button type="submit" class="btn btn-default btn-sm"  title="<?php echo $comment->id ?><?php echo $comment->reported ?><?php $comment->reported?>">Signaler ce commentaire</button>
+                        <button type="submit" class="btn btn-default btn-sm"  title="<?php echo $comment->id; ?> <?php echo $comment->reported ?>">Signaler ce commentaire</button>
                     </form>
                     <br/><br/><br/>
                 </div>

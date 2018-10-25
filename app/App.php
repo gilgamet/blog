@@ -9,7 +9,7 @@ require_once ROOT . '\core\Database\MySqlDatabase.php';
 class App 
 {
     
-    public $title = "Mon super site";
+    public $title = "";
     private $db_instance;
     private static $_instance;
     

@@ -17,7 +17,7 @@
         <tr>
             <td><?php echo $comment->id; ?></td>
             <td><?php echo $comment->reported; ?></td>
-            <td><?php echo $comment->pseudo; ?></td>
+            <td><?php echo htmlspecialchars($comment->pseudo); ?></td>
             <td><?php echo $comment->mail; ?></td>
             <td><?php echo $comment->contenu; ?></td> 
             

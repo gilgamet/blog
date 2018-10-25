@@ -4,6 +4,7 @@ require_once ROOT . "\app\Controller\Admin\AppController.php";
 require_once ROOT . "\app\Entity\CategoryEntity.php";
 require_once ROOT . "\app\app.php";
 require_once ROOT . "\core\HTML\BootstrapForm.php";
+
 /**
  * Class CategoriesController
  * Genère les pages index, ajout, edition et delete
@@ -11,7 +12,7 @@ require_once ROOT . "\core\HTML\BootstrapForm.php";
 class CategoriesController extends AppController {
 
     /**
-     *  Charge le model des categories
+     *  Charge le modele des categories
      */
     public function __construct() {
         parent::__construct();
@@ -32,7 +33,8 @@ class CategoriesController extends AppController {
      */
     public function add() {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('Category')->create([
+            $result = \App::getInstance()->getTable('Category')->create
+            ([
                 'titre' => $_POST['titre'],
             ]);
             return $this->index();

@@ -9,7 +9,7 @@ class Article extends Table
 
     public static function getLast()
     {
-        $req =  self::query
+        $req = self::query
         (
             "SELECT articles.id, articles.titre, articles.contenu, categories.titre AS categorie 
             FROM articles 

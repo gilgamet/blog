@@ -3,7 +3,7 @@
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Billet simple pour l'Alaska</title>       
+        <title>BILLET SIMPLE POUR L'ALASKA</title>       
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">

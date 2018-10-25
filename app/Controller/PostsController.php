@@ -8,6 +8,7 @@ require_once ROOT . "\core\Table\Table.php";
 require_once ROOT . "\app\Entity\PostEntity.php";
 require_once ROOT . '\app\Entity\CategoryEntity.php';
 require_once ROOT . "\core\HTML\BootstrapForm.php";
+require_once ROOT . '\app\controller\CommentsController.php';
 
 
 
@@ -48,9 +49,9 @@ class PostsController extends AppsController
     public function show()
     {
         
-        if (!empty($_POST['pseudo'])) {
+        if (!empty($_POST['pseudo'])){
             $result = $this->newComment();
-            if ($result) {
+            if ($result)  {
                 unset($_POST['pseudo']);
                 unset($_POST['mail']);
                 unset($_POST['contenu']);
@@ -65,7 +66,7 @@ class PostsController extends AppsController
         $this->render('posts.show', compact('article', 'comments', 'form'));
     }
 
-        /**
+       /**
      * Création d'un commentaire 
      *  @return request
      */
@@ -89,21 +90,4 @@ class PostsController extends AppsController
         $form = new \BootstrapForm($_POST);
         $this->render('admin.comments.edit', compact('commentTable', 'article', 'form'));
     }
-
-    /**
-     * Signale un commentaire
-     * @return header
-     */
-    public function report() 
-    {
-        $result = \App::getInstance()->getTable('comments');
-        $compte = $comment->reported + 1;
-        if (!empty($_POST)) {
-            
-            $req = $result->report([
-                    'reported' => $compte,
-                    'id' => $comment->id
-            ]);
-        }
-    }   
 }

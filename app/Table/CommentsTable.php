@@ -51,9 +51,8 @@ class CommentsTable extends Table
     {
         return $this->query
         (
-            "SELECT comments.id, comments.pseudo, comments.mail, comments.contenu, comments.reported
-            FROM comments
-            ORDER BY comments.date DESC"
+            "SELECT comments.id, comments.date, comments.pseudo, comments.mail, comments.contenu, comments.reported
+            FROM comments"
         );
     }
 
@@ -61,8 +60,8 @@ class CommentsTable extends Table
     {
         $req = $this->query
         (
-            "SELECT  comments.id, comments.reported 
-            FROM comments", [$id], true
+            "SELECT  comments.id, comments.contenu, comments.reported 
+            FROM comments", [$id]
         );
         return $req;
     }
@@ -71,12 +70,12 @@ class CommentsTable extends Table
      * Incrémente le compteur du signalement de commentaire
      *  @param type $id id du commentaire ciblé
      */
-    public function report($id) 
+    public function reported($id) 
     {
         $req = $this->query
         (
-            "UPDATE FROM comments SET reported = reported + 1 WHERE id = ?", [$id]
+            "UPDATE comments SET reported = 'signalé'  WHERE id = ?", [$id], true
         );
         return $req;
-    }    
+    }
 }

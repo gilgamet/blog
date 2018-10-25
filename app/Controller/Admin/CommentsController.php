@@ -23,8 +23,7 @@ class CommentsController extends AppController
      * Génere la vue index
      */
     public function index() {
-        $comments = \App::getInstance()->getTable('comments')->lastComment();
-        \App::getInstance()->title = "Gestion des commentaires";      
+        $comments = \App::getInstance()->getTable('comments')->lastComment();    
         $this->render('admin.comments.index', compact('comments'));
     }
 
