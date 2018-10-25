@@ -44,7 +44,7 @@ class CategoriesController extends AppController {
     }
 
     /**
-     * Vue de la page d'édition
+     * Vue de la page d'édition des categories
      * Si édition, retour sur l'index 
      */
     public function edit() {
