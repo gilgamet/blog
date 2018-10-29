@@ -32,7 +32,7 @@ class UsersController extends AppsController
      * @return header('Location')
      */
     public function sign_out() {
-        unset($_SESSION["auth"]);
+        session_destroy();
         header('Location: index.php');
     }
 }

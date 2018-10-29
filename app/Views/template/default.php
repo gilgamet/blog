@@ -3,7 +3,7 @@
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>BILLET SIMPLE POUR L'ALASKA</title>       
+        <title><?php echo App::getInstance()->title;?></title>       
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -25,15 +25,14 @@
             <p class="blog-header-logo">BILLET SIMPLE POUR L'ALASKA</p>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
-            <?php if (isset($_SESSION['auth'])):?>
+            <?php if (isset($_SESSION['auth'])){?>
             <a class="btn btn-sm btn-outline-secondary" href="?p=admin.posts.index">Gestion des articles</a>
             <a class="btn btn-sm btn-outline-secondary" href="index.php?p=users.sign_out">Se deconnecter</a>
-            <?php else: ?>
-            <a class="btn btn-sm btn-outline-secondary" href="index.php?p=users.login">Connexion</a>
+            <?php } else { ?>
+            <a class="btn btn-sm btn-outline-secondary" href="index.php?p=users.login">Connexion</a>           
           </div>
         </div>
       </header>
-
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
         </nav>
@@ -45,7 +44,6 @@
           <p class="lead my-3">Blog de la parution Online de mon livre: Billet simple pour l'alaska</p>
         </div>
       </div>
-
       <div class="row mb-2">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -77,14 +75,14 @@
         </div>
       </div>
     </div>
-    <?php endif; ?>
+    <?php } ?>
 </div>
 </div>
 
     <?php echo $content; ?><br/><br/><br/><br/><br/><br/><br/>  
     
-    <?php if (isset($_SESSION['auth'])):?>
-    <?php else: ?>
+    <?php if (isset($_SESSION['auth'])) { ?>
+    <?php } else { ?>
       <footer class="blog-footer">
       <div class="row">
       <div class="col-sm-1">
@@ -104,7 +102,7 @@
           </div>
     </div><!-- /.row -->  
     </footer>
-    <?php endif; ?>
+    <?php } ?>
 
        <!-- Bootstrap core JavaScript
     ================================================== -->

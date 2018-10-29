@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Class Table
- * Réuni les actions élémentaires à la bdd
+ * Classe Table
+ * Réunis les actions élémentaires à la bdd
  */
 class Table {
 

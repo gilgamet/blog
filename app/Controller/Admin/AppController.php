@@ -22,9 +22,9 @@ class AppController extends \AppsController
         parent::__construct();
         $app = \App::getInstance();
         $auth = new \DbAuth($app->getDb());
-        if (!$auth->logged()) {
+            if (!$auth->logged()) {
             $this->Forbidden();
-        }
+            }
     }
 
 }

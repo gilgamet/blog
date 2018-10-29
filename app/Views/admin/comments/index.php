@@ -13,13 +13,13 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($comments as $comment):?>
+        <?php foreach($comments as $comment) {?>
         <tr>
-            <td><?php echo $comment->id; ?></td>
-            <td><?php echo $comment->reported; ?></td>
+            <td><?php echo htmlspecialchars($comment->id); ?></td>
+            <td><?php echo htmlspecialchars($comment->reported); ?></td>
             <td><?php echo htmlspecialchars($comment->pseudo); ?></td>
-            <td><?php echo $comment->mail; ?></td>
-            <td><?php echo $comment->contenu; ?></td> 
+            <td><?php echo htmlspecialchars($comment->mail); ?></td>
+            <td><?php echo htmlspecialchars($comment->contenu); ?></td> 
             
             <td>
                 <a href="?p=admin.comments.edit&id=<?php echo $comment->id; ?>" class="btn btn-primary">Editer</a>       
@@ -30,7 +30,7 @@
                 </form>
             </td>
         </tr>
-        <?php endforeach; ?>
+        <?php } ?>
     </tbody>   
 </table>
 <br/>

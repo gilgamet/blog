@@ -1,7 +1,7 @@
 
-<?php if(!empty($comments)): ?>
+<?php if(!empty($comments)) { 
 
-    <?php foreach ($comments as $comment): ?>
+    foreach ($comments as $comment) { ?>
         <div class="row" >
             <div class="col-sm-1">
             </div>
@@ -14,15 +14,15 @@
                     <form action="?p=posts.show&id= <?php echo $_GET['id']; ?>" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="<?php echo $comment->id ?>">
                         <input type="hidden" name="reported" value="<?php echo $comment->reported?>">
-                        <button type="submit" class="btn btn-default btn-sm"  title="<?php echo $comment->id; ?> <?php echo $comment->reported ?>">Signaler ce commentaire</button>
+                        <button type="submit" class="btn btn-default btn-sm"  title="<?php echo $comment->id; ?> <?php echo $comment->reported; ?>">Signaler ce commentaire</button>
                     </form>
                     <br/><br/><br/>
                 </div>
         </div>
-    <?php endforeach; ?>
-<?php else: ?>     
+        <?php }        
+    } else { ?>     
     <div class="col-sm-12">Il n'y a pas encore de commentaire sur cet article</div><br/>
-<?php endif; ?>
+<?php } ?>
 
 <div id="comments" class="row" >
 <div class="col-sm-1">

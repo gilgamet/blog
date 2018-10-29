@@ -4,7 +4,7 @@
         <div class="col-sm-8">
 <?php 
 
-foreach($posts as $post): ?>
+foreach($posts as $post) { ?>
 
         <h2><a href="<?php echo $post->url; ?>"><?php echo $post->titre; ?></a></h2>
 
@@ -12,18 +12,18 @@ foreach($posts as $post): ?>
         
         <p><?php echo $post->extrait; ?></p>
 
-<?php endforeach; ?>
+<?php } ?>
 
 </div>
         <div class="col-sm-3">
 
                 <ul>    
                         <?php 
-                        foreach($categories as $categorie): ?>
+                        foreach($categories as $categorie){ ?>
                                 <li><a id='categories' href="<?php echo $categorie->url; ?>" >
                                 <div id='category'><?php echo $categorie->titre; ?></a></div>
                                 </li>
-                        <?php endforeach; ?>
+                        <?php }  ?>
                 </ul>    
         </div>    
 </div>        

@@ -74,7 +74,7 @@ class CommentsTable extends Table
     {
         $req = $this->query
         (
-            "UPDATE comments SET reported = 'signalé'  WHERE id = ?", [$id], true
+            "UPDATE comments SET reported WHERE id = ?", [$id]
         );
         return $req;
     }

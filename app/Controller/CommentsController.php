@@ -24,7 +24,7 @@ class CommentsController extends AppsController
     public function report() 
     {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('comments')->findComment($_POST['id']);
+            $result = \App::getInstance()->getTable('comments');
             $req = $result->reported(
                 [
                     "reported" => $_POST['reported']     
