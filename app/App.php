@@ -30,6 +30,7 @@ class App
      */
     public static function load() {
         session_start();
+        $_SESSION['reported'] = 0;
     }
     
     /**

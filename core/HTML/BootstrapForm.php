@@ -65,4 +65,12 @@ class BootstrapForm extends Form
     {
         return $this->surround("<button type='submit' onclick='submitform()' class='btn btn-primary'>Envoyer</button>");
     }
+
+     /**
+     * @return string
+     */
+    public function signal()
+    {
+        return $this->surround("<button type='submit' onclick='submitform()' class='btn btn-default btn-sm' name='report' value='report'>Signaler ce commentaire</button>");
+    }
 }

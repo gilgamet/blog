@@ -80,7 +80,5 @@ class PostsController extends AppController
             $result = \App::getInstance()->getTable('Post')->delete($_POST['id']);
                 return $this->index();
         }
-        
     }
-
 }

@@ -48,46 +48,23 @@ class PostsController extends AppsController
 
     public function show()
     {
-        
-        if (!empty($_POST['pseudo'])){
-            $result = $this->newComment();
-            if ($result)  {
-                unset($_POST['pseudo']);
-                unset($_POST['mail']);
-                unset($_POST['contenu']);
-                unset($_POST['reported']);
-                return $this->show();
+       if (!empty($_POST['pseudo'])){
+            $result = $this->Post->newComment();
+                 if ($result)  {
+                    unset($_POST['pseudo']);
+                    unset($_POST['mail']);
+                    unset($_POST['contenu']);
+                    return $this->show();
             }
-            
-        }
-        $comments = App::getInstance()->getTable('comments')->getCommentsById($_GET['id']);
+       }else if (!empty($_POST['report'])){
+            $this->Comments->reported($_POST['id']);
+       }      
+        $comments = $this->Comments->getCommentsById($_GET['id']);
         $article = App::getInstance()->getTable('Post')->findWithCategory($_GET['id']);
         $form = new BootstrapForm($_POST);
         $this->render('posts.show', compact('article', 'comments', 'form'));
     }
 
-       /**
-     * Création d'un commentaire 
-     *  @return request
-     */
-    public function newComment() 
-    {
-        $commentTable = \App::getInstance()->getTable('comments');
-        if (!empty($_POST)) {
-        
-            $req = $commentTable->create([
-                    'pseudo' => htmlspecialchars($_POST['pseudo']),
-                    'mail' => htmlspecialchars($_POST['email']),
-                    'contenu' => htmlspecialchars($_POST['commentaire']),
-                    'reported' => $_POST['reported'],
-                    'article_id' => $_GET['id']                        
-            ]);
-            if ($req) { 
-                return $this->index(); }
-        }
-        $commentTable = \App::getInstance()->getTable('comments')->getCommentById($_POST['id']);
-        $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
-        $form = new \BootstrapForm($_POST);
-        $this->render('admin.comments.edit', compact('commentTable', 'article', 'form'));
-    }
+ 
+    
 }

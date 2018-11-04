@@ -1,12 +1,13 @@
 <?php
 
 define('ROOT', dirname(__DIR__));
-   require ROOT . "\app\App.php";
-   require ROOT . "\app\Controller\PostsController.php";
-   require ROOT . "\app\Controller\Admin\PostsController.php";
-   require ROOT . "\app\Controller\Admin\CategoriesController.php";
-   require ROOT . "\app\Controller\UsersController.php";
-   require ROOT . "\app\Controller\Admin\CommentsController.php";
+   require_once ROOT . "\app\App.php";
+   require_once ROOT . "\app\Controller\PostsController.php";
+   require_once ROOT . '\app\Controller\CommentsController.php';
+   require_once ROOT . "\app\Controller\Admin\PostsController.php";
+   require_once ROOT . "\app\Controller\Admin\CategoriesController.php";
+   require_once ROOT . "\app\Controller\UsersController.php";
+   require_once ROOT . "\app\Controller\Admin\CommentsController.php";
    App::load();
    
 

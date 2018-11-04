@@ -13,7 +13,7 @@
 <?php
 ob_start();
 $content = ob_get_clean();
-require_once 'comments.php';
+require_once '..\app\Views\comments\comments.php';
 ?>
 
 <div class="row">

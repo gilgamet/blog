@@ -34,7 +34,7 @@ class CommentsTable extends Table
     {
         $req = $this->query
         (
-            "SELECT articles.id, articles.titre, articles.contenu, articles.date, comments.id, comments.pseudo, comments.contenu, comments.reported
+            "SELECT articles.id, articles.titre, articles.contenu, articles.date, articles.category_id, comments.id, comments.pseudo, comments.contenu, comments.reported
             FROM articles
             LEFT JOIN comments ON articles.id = article_id
             WHERE comments.article_id = ?", [$id]
@@ -74,7 +74,7 @@ class CommentsTable extends Table
     {
         $req = $this->query
         (
-            "UPDATE comments SET reported WHERE id = ?", [$id]
+            "UPDATE comments SET reported = 'reported'  WHERE id = ?", [$id]
         );
         return $req;
     }

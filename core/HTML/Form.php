@@ -64,4 +64,11 @@ class Form
         return $this->surround('<button type="submit">Envoyer</button>');
     }
 
+     /**
+     * @return string
+     */
+    public function signal()
+    {
+        return $this->surround('<button type="submit">Signaler ce commentaire</button>');
+    }
 }
