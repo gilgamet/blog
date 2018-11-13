@@ -1,15 +1,12 @@
 <?php
 
-require_once ROOT . '\app\Table\PostTable.php';
-require_once ROOT . '\app\Table\CategoryTable.php';
-require_once ROOT . "\app\Table\CommentsTable.php";
-require_once ROOT . '\core\Config.php';
-require_once ROOT . '\core\Database\MySqlDatabase.php';
+use Core\Config;
+use Core\Database\MysqlDatabase;
 
 class App 
 {
     
-    public $title = "";
+    public $title = "Billet simple pour l'Alaska";
     private $db_instance;
     private static $_instance;
     
@@ -30,7 +27,10 @@ class App
      */
     public static function load() {
         session_start();
-        $_SESSION['reported'] = 0;
+        require_once ROOT . '/app/Autoloader.php';
+        App\Autoloader::register();
+        require_once ROOT . '/core/Autoloader.php';
+        Core\Autoloader::register();
     }
     
     /**
@@ -41,7 +41,7 @@ class App
      */
 
     public function getTable($name) {
-        $class_name = ucfirst($name) . 'Table';
+        $class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';
         return new $class_name($this->getDb());
     }
     
@@ -50,7 +50,7 @@ class App
      */
     public function getDb() 
     {
-        $config = Config::getInstance(ROOT . '\config\config.php');
+        $config = Config::getInstance(ROOT . '/config/config.php');
         if (is_null($this->db_instance)) {
             $this->db_instance = new MySqlDatabase($config->get('db_name'), $config->get('db_user'), $config->get('db_pass'), $config->get('db_host'));
             }

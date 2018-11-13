@@ -1,10 +1,12 @@
 <?php
-require_once ROOT . "\core\HTML\BootstrapForm.php";
-require_once ROOT . "\core\Auth\DbAuth.php";
-require_once ROOT . "\app\App.php";
 
+namespace App\Controller;
 
-class UsersController extends AppsController
+use Core\Auth\DBAuth;
+use Core\HTML\BootstrapForm;
+use \App;
+
+class UsersController extends AppController
 {
     /**
      * Permet le login de l'utilisateur

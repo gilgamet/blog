@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Controller\Admin;
-require_once ROOT . "\app\Controller\Admin\AppController.php";
-require_once ROOT . "\app\Entity\CategoryEntity.php";
-require_once ROOT . "\app\app.php";
-require_once ROOT . "\core\HTML\BootstrapForm.php";
+
+use App;
+use Core\HTML\BootstrapForm;
 
 /**
  * Class CategoriesController
@@ -22,8 +22,8 @@ class CategoriesController extends AppController {
      * La vue de la page index
      */
     public function index() {
-        $items = \App::getInstance()->getTable('Category')->all();
-        \App::getInstance()->title = "Gestion des categories";
+        $items = App::getInstance()->getTable('Category')->all();
+        App::getInstance()->title = "Gestion des categories";
         $this->render('admin.categories.index', compact('items'));
     }
 
@@ -39,7 +39,7 @@ class CategoriesController extends AppController {
             ]);
             return $this->index();
         }
-        $form = new \BootstrapForm($_POST);
+        $form = new BootstrapForm($_POST);
         $this->render('admin.categories.edit', compact('form'));
     }
 
@@ -49,13 +49,13 @@ class CategoriesController extends AppController {
      */
     public function edit() {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('Category')->update($_GET['id'], [
+            $result = App::getInstance()->getTable('Category')->update($_GET['id'], [
                 'titre' => $_POST['titre'],
             ]);
             return $this->index();
         }
-        $category = \App::getInstance()->getTable('Category')->find($_GET['id']);
-        $form = new \BootstrapForm($category);
+        $category = App::getInstance()->getTable('Category')->find($_GET['id']);
+        $form = new BootstrapForm($category);
         $this->render('admin.categories.edit', compact('form'));
     }
 
@@ -64,7 +64,7 @@ class CategoriesController extends AppController {
      */
     public function delete() {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('Category')->delete($_POST['id']);
+            $result = App::getInstance()->getTable('Category')->delete($_POST['id']);
             return $this->index();
         }
     }

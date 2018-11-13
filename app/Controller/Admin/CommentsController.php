@@ -1,14 +1,9 @@
 <?php
 
 namespace App\Controller\Admin;
-use App\Controller\Admin\AppController;
 
-require_once ROOT . '\app\app.php';
-require_once ROOT . '\app\Controller\AppsController.php';
-require_once ROOT . '\app\Table\CommentsTable.php';
-require_once ROOT . "\core\HTML\BootstrapForm.php";
-require_once ROOT . "\app\Entity\CommentsEntity.php";
-
+use Core\HTML\BootstrapForm;
+use App;
 
 class CommentsController extends AppController
 {
@@ -23,7 +18,7 @@ class CommentsController extends AppController
      * Génere la vue index
      */
     public function index() {
-        $comments = \App::getInstance()->getTable('comments')->lastComment();    
+        $comments = App::getInstance()->getTable('comments')->lastComment();    
         $this->render('admin.comments.index', compact('comments'));
     }
 
@@ -34,7 +29,7 @@ class CommentsController extends AppController
     public function edit()
     {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('comments')->update($_GET['id'], [
+            $result = App::getInstance()->getTable('comments')->update($_GET['id'], [
                 'pseudo' => $_POST["pseudo"],
                 "contenu" => $_POST["contenu"],
                 "reported" => $_POST["reported"],
@@ -46,9 +41,9 @@ class CommentsController extends AppController
                 return $this->index();
             }
         }
-        $comment = \App::getInstance()->getTable('comments')->find($_GET['id']);
-        $article = \App::getInstance()->getTable('Post')->extract('id', 'titre');
-        $form = new \BootstrapForm($comment);  
+        $comment = App::getInstance()->getTable('comments')->find($_GET['id']);
+        $article = App::getInstance()->getTable('Post')->extract('id', 'titre');
+        $form = new BootstrapForm($comment);  
         $this->render('admin.comments.edit', compact('article', 'form'));
     }
 
@@ -58,7 +53,7 @@ class CommentsController extends AppController
      */
     public function delete() {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('comments')->delete($_POST['id']);
+            $result = App::getInstance()->getTable('comments')->delete($_POST['id']);
             return $this->index();
         }
     }

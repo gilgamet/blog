@@ -1,8 +1,10 @@
 <?php
 
-require_once ROOT . '\core\Database\Database.php';
+namespace Core\Database;
 
-class MySqlDatabase extends Database 
+use \PDO;
+
+class MysqlDatabase extends Database 
 {
 
     private $db_name;
@@ -22,7 +24,7 @@ class MySqlDatabase extends Database
     private function getPDO()
     {
         if ($this->pdo === null){
-            $pdo = new PDO("mysql:dbname=blog;host=localhost;charset=utf8","root","");
+            $pdo = new PDO("mysql:dbname=fuentestuyp4;host=fuentestuyp4.mysql.db;charset=utf8","fuentestuyp4","31128211Aa");
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
         }  

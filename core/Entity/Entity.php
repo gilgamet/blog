@@ -1,5 +1,7 @@
 <?php
 
+namespace Core\Entity;
+
 class Entity {
 
     public function __get($key){

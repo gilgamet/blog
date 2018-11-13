@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Controller\Admin;
-require_once ROOT . "\app\App.php";
-require_once ROOT . "\core\HTML\BootstrapForm.php";
-require_once ROOT . "\core\Auth\DbAuth.php";
-require_once ROOT . "\app\Controller\Admin\AppController.php";
-require_once ROOT . '\app\Table\Article.php';
+
+use Core\HTML\BootstrapForm;
+use App;
 
 /**
  * Class PostsController
@@ -26,14 +24,14 @@ class PostsController extends AppController
     */
     public function index()
     {
-        $posts = \App::getInstance()->getTable('Post')->all();
-        \App::getInstance()->title = "Géstion des Articles";
+        $posts = App::getInstance()->getTable('Post')->all();
+        App::getInstance()->title = "Gestion des Articles";
         $this->render('admin.posts.index', compact('posts'));
     }
 
     public function add()
     {
-        $postTable = \App::getInstance()->getTable('Post');
+        $postTable = App::getInstance()->getTable('Post');
         if (!empty($_POST)) {
             $result = $postTable->create
             ([
@@ -45,8 +43,8 @@ class PostsController extends AppController
                 return $this->index();
             }
     }
-            $categories = \App::getInstance()->getTable('Category')->extract('id', 'titre');
-            $form = new \BootstrapForm($_POST);
+            $categories = App::getInstance()->getTable('Category')->extract('id', 'titre');
+            $form = new BootstrapForm($_POST);
             $this->render('admin.posts.edit', compact('categories', 'form'));
 }
 
@@ -58,7 +56,7 @@ class PostsController extends AppController
     public function edit()
     {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('Post')->update($_GET['id'], [
+            $result = App::getInstance()->getTable('Post')->update($_GET['id'], [
                 'titre' => $_POST["titre"],
                 "contenu" => $_POST["contenu"],
                 'category_id' => $_POST["category_id"]
@@ -68,16 +66,16 @@ class PostsController extends AppController
                 return $this->index();
             }
         }
-        $post = \App::getInstance()->getTable('Post')->find($_GET["id"]);
-        $categories = \App::getInstance()->getTable('Category')->extract('id', 'titre');
-        $form = new \BootstrapForm($post);  
+        $post = App::getInstance()->getTable('Post')->find($_GET["id"]);
+        $categories = App::getInstance()->getTable('Category')->extract('id', 'titre');
+        $form = new BootstrapForm($post);  
         $this->render('admin.posts.edit', compact('categories', 'form'));
     }
 
     public function delete()
     {
         if (!empty($_POST)) {
-            $result = \App::getInstance()->getTable('Post')->delete($_POST['id']);
+            $result = App::getInstance()->getTable('Post')->delete($_POST['id']);
                 return $this->index();
         }
     }

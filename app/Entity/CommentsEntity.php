@@ -1,6 +1,8 @@
 <?php
 
-require_once ROOT . '\core\Entity\Entity.php';
+namespace App\Entity;
+
+use Core\Entity\Entity;
 
 class CommentsEntity extends Entity
 {

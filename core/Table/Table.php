@@ -1,5 +1,9 @@
 <?php
 
+namespace Core\Table;
+
+use Core\Database\Database;
+
 /**
  * Classe Table
  * Réunis les actions élémentaires à la bdd
@@ -25,7 +29,7 @@ class Table {
     }
 
     /**
-     * Renvoi tout les élément de la table
+     * retourne tous les elements de la table choisie
      * @param $class string Le nom de la classe à charger
      */
     public function all() 

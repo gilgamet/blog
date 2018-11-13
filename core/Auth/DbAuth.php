@@ -1,5 +1,9 @@
 <?php
 
+namespace Core\Auth;
+
+use Core\Database\Database;
+
 class DbAuth{
 
     private $db;

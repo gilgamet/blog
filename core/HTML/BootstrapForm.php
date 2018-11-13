@@ -1,6 +1,6 @@
 <?php
 
-require_once ROOT . "\core\HTML\Form.php";
+namespace Core\HTML;
 
 class BootstrapForm extends Form
 {

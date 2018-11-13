@@ -1,6 +1,8 @@
 <?php
 
-require_once ROOT . '\core\Entity\Entity.php';
+namespace App\Entity;
+
+use Core\Entity\Entity;
 
 /**
  * Class entity  permet un affichage des données de post (article) 

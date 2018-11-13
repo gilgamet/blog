@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace App;
 
 /**
  * Class Autoloader
@@ -23,7 +23,7 @@ class Autoloader
      * @param "$class" string Le nom de la classe à charger
     */
 
-    static function autoload($class)
+     static function autoload($class)
     {
         if (strpos($class, __NAMESPACE__ . '\\') === 0) {
             $class = str_replace(__NAMESPACE__ . '\\', '', $class);
@@ -31,5 +31,4 @@ class Autoloader
             require __DIR__ . '/' . $class . '.php';
         }
     }
-
 }

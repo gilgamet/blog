@@ -1,30 +1,28 @@
 <?php
+
 namespace App\Controller\Admin;
 
-require_once ROOT . '\app\app.php';
-require_once ROOT . '\core\Auth\DbAuth.php';
-require_once ROOT . '\app\Controller\AppsController.php';
+use \App;
+use \Core\Auth\DBAuth;
 
 /**
  * Class AppController
- * Connexion a la meme instance App (singleton)
- * Si acces non authentifié, page d'erreur
+ * Connexion Admin
  */
 
-class AppController extends \AppsController
-{
+class AppController extends \App\Controller\AppController {
+
     /**
-     * Constructeur a l'appel de la classe
-     *
+     * Si l'utilisateur n'est pas identifié, page d'erreur
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
-        $app = \App::getInstance();
-        $auth = new \DbAuth($app->getDb());
-            if (!$auth->logged()) {
-            $this->Forbidden();
-            }
+        $app = App::getInstance();
+        $auth = new DBAuth($app->getDb());
+        if (!$auth->logged()) {
+            $this->forbidden();
+        }
     }
 
 }
+
