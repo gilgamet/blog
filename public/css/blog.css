@@ -45,10 +45,6 @@ li{
     list-style-type: none;
 }
 
-#categories{
-    color:#343a40;
-}
-
 #foot{
     display : flex;
     display: -webkit-flex;
@@ -75,14 +71,35 @@ ul{
     padding-inline-start: 0px;
 }
 
-#category{
-    background-color: none;  
-}
-
 #chapter, #cad, #cindex, #cedit, #pindex, #pedit{
     padding: 4% 0 0 0;
 }
 
 #pedit{
     padding: 0 0 3% 0;
+}
+
+#title{
+    margin: 2rem 0 2rem 0;
+}
+
+#post{
+    margin-bottom: 2rem;
+}
+
+h2{
+    padding-top: 2rem;
+}
+
+form{
+    margin: 4rem 0 4rem 0;
+}
+
+@media all and (max-width:480px)
+{
+
+    #categorie{
+       display: hidden;
+    }
+
 }

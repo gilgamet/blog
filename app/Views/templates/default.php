@@ -2,7 +2,7 @@
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title><?php echo App::getInstance()->title;?></title>       
+        <title> <?php echo App::getInstance()->title; ?> </title>       
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -48,28 +48,22 @@
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-primary">Chapitre 1</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#"></a>
-              </h3>
               <div class="mb-1 text-muted"></div>
               <p class="card-text mb-auto">Ex turba vero imae sortis et <br/>paupertinae in tabernis aliqui<br/> pernoctant vinariis non nulli velariis umbraculorum theatralium latent, quae Campanam ...</p>
               <a href="index.php?p=posts.show&id=7">Lire la suite</a>
             </div>
-            <img class="card-img-right flex-auto d-none d-lg-block" src="images\Plane.jpg" alt="Card image cap">
+            <img class="card-img-right flex-auto d-none d-lg-block" src="images/Plane.jpg" alt="Card image cap">
           </div>
         </div>
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-success">Chapitre 2</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#"></a>
-              </h3>
               <div class="mb-1 text-muted"></div>
               <p class="card-text mb-auto">Nascitur diversitate potest inanes<br/> pomerium coluntur mmmmmmm</p>
               <a href="index.php?p=posts.show&id=8">Lire la suite</a>
             </div>
-            <img class="card-img-right flex-auto d-none d-lg-block" src="images\Alaska.jpg" alt="Card image cap">
+            <img class="card-img-right flex-auto d-none d-lg-block" src="images/Alaska.jpg" alt="Card image cap">
           </div>
         </div>
       </div>

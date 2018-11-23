@@ -19,7 +19,7 @@ class PostsController extends AppController
     }
 
     /**
-     *
+     * Affichage de la page index
      */
     public function index()
     {             
@@ -35,7 +35,7 @@ class PostsController extends AppController
         if ($categorie === false) {
             $this->notFound();
         }
-        $articles = App::getInstance()->getTable('Post')->lastByCategory($_GET['id']);
+        $articles = $this->Post->lastByCategory($_GET['id']);
         $categories = App::getInstance()->getTable('Category')->all();
         $this->render('posts.category', compact('articles', 'categories', 'categorie'));
     }
