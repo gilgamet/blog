@@ -1,7 +1,8 @@
+<div class='container'> 
 <div class="row">
     <div class="col-sm-1">
-    </div>    
-        <div class="col-sm-8">
+</div>    
+        <div class="col-sm-9">
 <?php
     if ($errors): ?>
         <div class="alert alert-danger">
@@ -13,5 +14,5 @@
     <?php echo $form->input('username', 'Pseudo'); ?>
     <?php echo $form->input("password", 'Mot de passe', ['type' => 'password']); ?>
     <button class="btn btn-primary">Envoyer</button>
-</form> 
-<br/><br/><br/><br/><br/><br/><br/></div> 
+</form><br/> 
+</div><br/><br/> 

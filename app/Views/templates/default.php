@@ -69,46 +69,47 @@
               <p class="card-text mb-auto">Nascitur diversitate potest inanes<br/> pomerium coluntur mmmmmmm</p>
               <a href="index.php?p=posts.show&id=8">Lire la suite</a>
             </div>
-            <img class="card-img-right flex-auto d-none d-lg-block" src="images\Alaska.jpg" alt="Card image cap" height="311.2" width="358.483">
+            <img class="card-img-right flex-auto d-none d-lg-block" src="images\Alaska.jpg" alt="Card image cap">
           </div>
         </div>
       </div>
     </div>
     <?php } ?>
-</div>
-</div>
 
-    <?php echo $content; ?><br/><br/><br/><br/><br/><br/><br/>  
+
+    <?php echo $content;?>
     
     <?php if (isset($_SESSION['auth'])) { ?>
     <?php } else { ?>
-      <footer class="blog-footer">
-      <div class="row">
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-4">
+      <footer class="container" id='foot'>
+      <div class="back">
+      <p>
+          </p>
           <p>
           <br/><br/><a href="#">Back to top</a><br/>
             © Jean Forteroche tous droits réservés<br/>
             © Jean Forteroche All rights reserved 
           </p>   
     </div>
-          <div class="col-sm-1">
+          <div class="jaime">
           <p>
-            <br/><br/><i class="fab fa-twitter-square"></i><a href="https://twitter.com/forteroche">Twitter</a>
+          </p>
+          <p>
+          <br/><br/><i class="fab fa-twitter-square"></i><a href="https://twitter.com/forteroche">Twitter</a>
             <br/><i class="fab fa-facebook"></i><a href="https://www.facebook.com/profile.php?id=100017965573700&lst=100014582262490%3A100017965573700%3A1531465999&sk=friends&source_ref=pb_friends_tl">Facebook</a>
           </p>
-          </div>
-    </div><!-- /.row -->  
+          </div> 
+    </div> 
     </footer>
     <?php } ?>
+
 
        <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"><\/script>')</script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      <script type='text/javascript' src='js/plugins/tinymce.min.js'></script>
     <script type="text/javascript" src="js/plugins/init_tinymce.js"></script>    
     </body>

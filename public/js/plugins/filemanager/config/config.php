@@ -9,7 +9,7 @@ mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
 date_default_timezone_set('Europe/Rome');
-setlocale(LC_CTYPE, 'en_US'); //correct transliteration
+setlocale(LC_CTYPE, 'fr_FR'); //correct transliteration
 
 /*
 |--------------------------------------------------------------------------
@@ -48,11 +48,12 @@ define('DEBUG_ERROR_MESSAGE', true); // TRUE or FALSE
 |    |- source <- upload folder
 |    |- thumbs <- thumbnail folder [must have write permission (755)]
 |    |- filemanager
-|    |- js
-|    |   |- tinymce
-|    |   |   |- plugins
-|    |   |   |   |- responsivefilemanager
-|    |   |   |   |   |- plugin.min.js
+|    |   |- responsivefilemanager
+|    |   |   |- plugin.min.js
+
+
+
+ 
 */
 
 $config = array(
@@ -83,7 +84,7 @@ $config = array(
 	| with final /
 	|
 	*/
-	'current_path' => '../public/images',
+	'current_path' => '../../../images/',
 
 	/*
 	|--------------------------------------------------------------------------

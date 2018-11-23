@@ -1,6 +1,10 @@
-<br/>
-<h1>Administrer les articles</h1>
-
+</header>
+<div class='container' id='pindex'>
+    <div class='row'>
+        <div class="col-sm-8"> 
+            <h1>Administrer les articles</h1>
+        </div>
+    </div>
 <p>
     <a href="?p=admin.posts.add" class="btn btn-success">Ajouter un article</a>
     <a href="?p=admin.categories.index" class="btn btn-success">Gérer les chapitres</a>
@@ -16,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($posts as $post):?>
+        <?php foreach($posts as $post){?>
         <tr>
             <td><?php echo $post->id; ?></td>
             <td><?php echo $post->titre; ?></td>
@@ -28,7 +32,9 @@
                 </form>
             </td>
         </tr>
-        <?php endforeach; ?>
+        <?php } ?>
     </tbody>   
 </table>
+
+
 

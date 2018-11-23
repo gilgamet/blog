@@ -1,10 +1,13 @@
-<br/>
-<h1>Administrer les Chapitres</h1>
-
-<p>
-    <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>
-</p>
-
+</header>
+<div class='container' id='chapter'>
+    <div class='row'>
+        <div class='col-sm-8'>
+            <h1>Administrer les Chapitres</h1>
+            <p>
+            <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>
+            </p>
+       </div>
+    </div>
 <table class="table">
     <thead>
         <tr>
@@ -30,4 +33,4 @@
         <?php endforeach; ?>
     </tbody>   
 </table>
-
+</div>
