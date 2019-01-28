@@ -24,7 +24,7 @@ class MysqlDatabase extends Database
     private function getPDO()
     {
         if ($this->pdo === null){
-            $pdo = new PDO("mysql:dbname=fuentestuyp4;host=fuentestuyp4.mysql.db;charset=utf8","fuentestuyp4","31128211Aa");
+            $pdo = new PDO("mysql:dbname=xxx;host=xxx.mysql.db;charset=utf8","xxxxx","xxxxx");
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
         }  
